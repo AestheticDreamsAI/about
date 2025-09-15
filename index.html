@@ -1,101 +1,348 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Phil Frei — Local-First AI</title>
-  <meta name="description" content="Local-First AI that never phones home. Privacy-first software, zero trackers, real outcomes." />
-  <meta name="author" content="Phil Frei" />
+  <title>Phil Frei – AestheticDreams | Privacy‑First, Local‑First AI</title>
+  <meta name="description" content="I build AI that doesn’t screw you over – local, private, built for freedom. Check my projects, my story, my vibe." />
   <meta name="theme-color" content="#0f0f0f" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Phil Frei" />
-  <meta property="og:title" content="Phil Frei — Local-First AI" />
-  <meta property="og:description" content="Local-First AI that never phones home. Privacy-first software, zero trackers, real outcomes." />
-  <meta property="og:image" content="/og.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-<meta http-equiv="Content-Security-Policy" content="
-default-src 'self';
-img-src 'self' data:;
-font-src 'self';
-script-src 'self' 'nonce-N0NC3-LOCAL';
-style-src 'self';
-connect-src 'self';
-base-uri 'none';
-form-action 'self';
-frame-ancestors 'none';
-">
-
   <style>
-    :root{--bg:#0f0f0f;--panel:#121212;--panel2:#1a1a1a;--text:#e8e8e8;--muted:#a8a8a8;--brand:#64b5f6;--line:#2b2b2b;--ok:#7ee787}
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{font-family:system-ui, sans-serif;background:var(--bg);color:var(--text)}
-    a{color:var(--brand);text-decoration:none;cursor:pointer}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;height:auto;border-radius:8px}
-    .wrap{max-width:1120px;margin:0 auto;padding:20px}
-    .skip{position:absolute;left:-9999px}
-    .skip:focus{left:20px;top:10px;background:#1a1a1a;padding:8px 12px;border:1px solid var(--brand)}
-    :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-    header{position:sticky;top:0;z-index:40;background:rgba(15,15,15,.75);backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 18px #64b5f688}
-    .nav-links{display:none;gap:14px}
-    .nav-links a{color:var(--muted);padding:10px 12px;border-radius:6px}
-    .nav-links a.active{color:var(--brand);background:var(--panel2);border:1px solid var(--line)}
-    .hamburger{display:inline-flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--panel2);cursor:pointer}
-    .hamburger span{display:block;width:22px;height:2px;background:#cfcfcf}
-    .mobile{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.3s;z-index:50}
-    .mobile:not(.hidden){opacity:1;visibility:visible}
-    .sheet{position:absolute;right:0;top:0;height:100%;width:min(86%,360px);background:var(--panel2);border-left:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:.3s}
-    .mobile:not(.hidden) .sheet{transform:translateX(0)}
-    .sheet a{padding:12px 10px;border-radius:6px;color:#dfe9ff}
-    .sheet a.active{background:#111c2a;border:1px solid #214261}
-    .hero{display:grid;gap:20px;align-items:center;padding:36px 0}
-    .kicker{color:#9abff8;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
-    h1{line-height:1.07;margin:.2rem 0;font-size:clamp(2rem,6vw,3.4rem)}
-    .sub{color:#d0d0d0;font-size:1.06rem;line-height:1.75}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .chip{border:1px solid var(--line);background:var(--panel2);color:#cfe6ff;padding:6px 10px;border-radius:999px;font-size:.85rem}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);font-weight:600;transition:border-color 0.3s}
-    .btn:hover{border-color:var(--brand)}
-    section{padding:44px 0;border-top:1px solid var(--line)}
-    section:first-child{border-top:none}
-    h2{font-size:1.6rem;margin:0 0 12px}
-    .lead{color:#cfcfcf;font-size:1.1rem;line-height:1.6;margin-bottom:20px}
-    .grid{display:grid;gap:16px}
-    @media(min-width:720px){.grid.two{grid-template-columns:repeat(2,1fr)}}
-    .card{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .card h3{margin-top:0;color:var(--brand)}
-    .meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem}
-    footer{padding:36px 0;color:var(--muted);border-top:1px solid var(--line)}
-    @media(min-width:880px){.nav-links{display:flex}.hamburger{display:none}.hero{grid-template-columns:1.1fr .9fr}}
-  </style>
+    :root {
+      --bg: #0f0f0f;
+      --panel: #121212;
+      --panel2: #1a1a1a;
+      --text: #e8e8e8;
+      --muted: #a8a8a8;
+      --brand: #64b5f6;
+      --line: #2b2b2b;
+      --ok: #7ee787;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; border-radius: 8px; }
 
+    /* Shell */
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 20px; }
+
+    /* Header / Mobile Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(15, 15, 15, 0.75);
+      backdrop-filter: blur(10px) saturate(140%);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 18px #64b5f688;
+    }
+    .nav-links {
+      display: none;
+      gap: 14px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+    }
+    .nav-links a[aria-current="page"],
+    .nav-links a.active {
+      color: var(--brand);
+      background: var(--panel2);
+      border-color: var(--line);
+    }
+    .hamburger {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel2);
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #cfcfcf;
+      border-radius: 2px;
+    }
+
+    /* Mobile Menu */
+    .mobile {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .mobile:not(.hidden) {
+      opacity: 1;
+      visibility: visible;
+    }
+    .sheet {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: min(86%, 360px);
+      background: var(--panel2);
+      border-left: 1px solid var(--line);
+      padding: 18px 18px 28px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile:not(.hidden) .sheet {
+      transform: translateX(0);
+    }
+    .sheet a {
+      padding: 12px 10px;
+      border-radius: 6px;
+      color: #dfe9ff;
+      border: 1px solid transparent;
+    }
+    .sheet a.active {
+      background: #111c2a;
+      border-color: #214261;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 20px;
+      align-items: center;
+      padding: 36px 0;
+    }
+    .kicker {
+      color: #9abff8;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    h1 {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.07;
+      margin: 0.2rem 0;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+    }
+    .sub {
+      color: #d0d0d0;
+      font-size: 1.06rem;
+      line-height: 1.75;
+    }
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--panel2);
+      color: #cfe6ff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+    .cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--panel2);
+      font-weight: 600;
+    }
+    .btn:hover {
+      border-color: var(--brand);
+    }
+
+    /* Sections */
+    section {
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+    }
+    h2 {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1.6rem;
+      margin: 0 0 12px;
+    }
+    .lead {
+      color: #cfcfcf;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 720px) {
+      .grid.two { grid-template-columns: repeat(2, 1fr); }
+      .grid.three { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .card h3 {
+      margin: 0.2rem 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin-top: 10px;
+    }
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--line);
+    }
+    .t {
+      position: relative;
+      padding: 0 0 14px 38px;
+    }
+    .t:before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0.45rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+    .t strong {
+      display: inline-block;
+      width: 120px;
+    }
+
+    /* Quote */
+    .quote {
+      border-left: 4px solid var(--brand);
+      background: var(--panel2);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #cfe6ff;
+      font-style: italic;
+    }
+
+    /* Rules Box */
+    .rules-box {
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .rules-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .rules-box li {
+      margin-bottom: 8px;
+    }
+    .rules-box li::before {
+      content: "→ ";
+      color: var(--brand);
+    }
+
+    /* Footer */
+    footer {
+      padding: 36px 0;
+      color: var(--muted);
+    }
+
+    /* Desktop tweaks */
+    @media (min-width: 880px) {
+      .nav-links { display: flex; }
+      .hamburger { display: none; }
+      .hero { grid-template-columns: 1.1fr 0.9fr; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .mobile, .sheet { transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip">Skip to content</a>
   <header>
-    <div class="wrap nav">
-      <div class="brand"><span class="dot"></span>Phil Frei</div>
-      <nav class="nav-links">
-        <a href="#home" class="active">Home</a>
+    <div class="wrap nav" aria-label="Main navigation">
+      <div class="brand"><span class="dot"></span> AestheticDreams</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home" class="active" aria-current="page">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#stories">Stories</a>
         <a href="#independence">Why Independence?</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="mobile hidden" id="mobileMenu">
-      <div class="sheet">
+      <div class="sheet" role="dialog" aria-modal="true" aria-label="Mobile navigation">
         <a href="#home" class="active">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
@@ -105,171 +352,237 @@ frame-ancestors 'none';
       </div>
     </div>
   </header>
+
   <main id="main" class="wrap"></main>
-  <footer class="wrap"><small>© <span id="year"></span> Phil Frei — Local-First AI</small></footer>
-  <script nonce="N0NC3-LOCAL">
-    const pages={
-      home:`<section class="hero">
-        <div>
-          <p class="kicker">Privacy-First • Local-First • Independence</p>
-          <h1>Phil Frei</h1>
-          <p class="sub">37, wheelchair. I build AI that never phones home — local, private, free.</p>
-          <div class="chips">
-            <span class="chip">GoogolPlex 2025</span>
-            <span class="chip">LAMBot-AI</span>
-            <span class="chip">Cherry-Lite</span>
-            <span class="chip">PiperLing</span>
-            <span class="chip">Alessia</span>
+
+  <footer class="wrap">
+    <small>© <span id="year"></span> Phil Frei – AestheticDreams. Screw clouds. Own your data.</small>
+  </footer>
+
+  <script>
+    // Pages content
+    const pages = {
+      home: `
+        <section class="hero" style="border-top:none">
+          <div>
+            <p class="kicker">Privacy‑First • Local‑First • Independence Always • No Bullshit</p>
+            <h1>Phil Frei</h1>
+            <p class="sub">37, wheelchair, zero fucks given. I build AI that <strong>doesn’t screw you</strong> — local, private, free. <strong>Solo builder.</strong> No babysitting. No lock-in. If you want leadership, not excuses — keep reading.</p>
+            <div class="chips">
+              <span class="chip">GoogolPlex 2025 (legal & patch-proof)</span>
+              <span class="chip">LAMBot-AI (intent-driven)</span>
+              <span class="chip">Cherry-Lite (offline AI)</span>
+              <span class="chip">PiperLing (speech AI)</span>
+              <span class="chip">PiperLingWebApp (UI)</span>
+              <span class="chip">Alessia (automated persona)</span>
+            </div>
+            <div class="cta">
+              <a class="btn" href="#projects">See Projects</a>
+              <a class="btn" href="#contact">Work with Me (Solo Only)</a>
+            </div>
+          </div>
+          <div>
+            <img src="https://dummyimage.com/800x520/1a1a1a/ffffff&text=AestheticDreams" alt="Abstract image for AestheticDreams" />
+          </div>
+        </section>
+      `,
+      projects: `
+        <section id="projects">
+          <h2>What I Build</h2>
+          <p class="lead">Stuff that <em>works</em> — no cloud bullshit, just real outcomes.</p>
+          <div class="rules-box">
+            <h3>How I Work</h3>
+            <ul>
+              <li>Solo delivery. I handle architecture, build, and handover.</li>
+              <li>Local-first. No tracking, no lock-in, no cloud nonsense.</li>
+              <li>Direct comms. Async, clear, no status-meeting circus.</li>
+              <li>Scope > blabla. I say <strong>no</strong> when it’s dumb.</li>
+              <li>Project-based. No hourly billing bullshit.</li>
+              <li>Ownership. Code and docs are yours.</li>
+            </ul>
+            <p><strong>Not compatible if:</strong> You want "fast & cheap," "privacy later," or "OpenAI offline for free."</p>
+          </div>
+          <div class="grid two" role="list">
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>GoogolPlex 2025</strong></span><span>Live & Legal</span></div>
+              <h3>iOS Plugin Framework Apple Can’t Kill</h3>
+              <p><strong>Outcome:</strong> Patch-proof iOS extension, privacy-first control.</p>
+              <p>A patch-proof, local Siri plugin framework for iOS — inspired by the GoogolPlex (Betterthansiri.com) hack (2014), but open, extensible and privacy-first. <strong>Built with:</strong> Python</p>
+              <p><a href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a> · <a href="https://github.com/AestheticDreamsAI/googolplex-2025" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>LAMBot-AI</strong></span><span>In Progress</span></div>
+              <h3>Language Action Model Chatbot</h3>
+              <p><strong>Outcome:</strong> Fast intent recognition, app automation.</p>
+              <p>A simple Language Action Model (LAM) chatbot built with C# and ML.NET that recognizes user intents and executes specific actions such as launching applications. <strong>Built with:</strong> C#</p>
+              <p><a href="#" target="_blank" rel="noopener">Open Spec</a> · <a href="#" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>Cherry-Lite</strong></span><span>In Progress</span></div>
+              <h3>Offline AI Client</h3>
+              <p><strong>Outcome:</strong> Offline AI for app control, no internet needed.</p>
+              <p>Cherry-Lite is a simple offline AI client based on the LAMBot-AI framework. It recognizes user intents and performs actions like launching applications using machine learning and NLP. <strong>Built with:</strong> C#</p>
+              <p><a href="#" target="_blank" rel="noopener">Open Spec</a> · <a href="#" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>PiperLing</strong></span><span>2024</span></div>
+              <h3>Fast Speech Translation AI</h3>
+              <p><strong>Outcome:</strong> Offline real-time translation pipelines.</p>
+              <p>PiperLing is a powerful open-source interpreter AI based on Piper TTS, Ollama or GPT4o, and C#. Designed to provide simple and fast speech translation and synthesis. <strong>Built with:</strong> C#</p>
+              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>PiperLingWebApp</strong></span><span>2024</span></div>
+              <h3>Web UI for PiperLing</h3>
+              <p><strong>Outcome:</strong> Lightweight web interface for speech AI.</p>
+              <p>Simple Web UI for use as a Desktop or Smartphone app with PiperLing. <strong>Built with:</strong> HTML/JavaScript</p>
+              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>Alessia Seelentanz</strong></span><span>Live Experiment</span></div>
+              <h3>Automated Influencer with Real Voice</h3>
+              <p><strong>Outcome:</strong> Consistent persona, zero spam, real engagement.</p>
+              <p>German-speaking lifestyle persona. Writes her own posts, stays real, interacts like a human. <strong>Experimental:</strong> Possesses emotional intelligence, long-term memory, learns from the past and evolves automatically. <strong>Built with:</strong> Python, HTML/Javascript</p>
+              <p><a href="https://alessia-seelentanz.de/" target="_blank" rel="noopener">Open Spec</a> · <a href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+          </div>
+        </section>
+      `,
+      about: `
+        <section id="about">
+          <h2>About Me</h2>
+          <div class="grid two">
+            <div>
+              <p class="lead">I love independence and results. Kidney transplant at 10, years of surgeries, a stroke. No pity, just decisions. Coding AI since 2003 – first for myself, now for people who want real shit.</p>
+              <p>Back when I worked as a web designer in an institution for people with disabilities, “privacy and security” were treated like sacred words. The irony? The firewall was locked down so hard I couldn’t even upload a website via FTP. Management didn’t bother to fix it. So I hacked my way through – not for fun, but just to get my work done.</p>
+              <div class="quote">“When I broke through the company firewall just to do my job, they stopped seeing the wheelchair – they saw someone who solves problems.”</div>
+              <p>Your data’s yours. My tech runs local, uses legit APIs, no hacks. Privacy matters, but I don’t cry over spilled data. I build what can’t be patched away and vibe with people who respect my freedom.</p>
+              <p><strong>Today:</strong> I ship tools for those who give a damn about control. No fluff, no excuses, just my rules.</p>
+              <p class="lead" style="margin-top:10px"><strong>Tech:</strong> C#, Python, JavaScript • ML.NET, Ollama, local LLMs • Piper TTS • iOS Shortcuts • Home Assistant</p>
+            </div>
+            <div>
+              <h3>Timeline (1997–2025)</h3>
+              <div class="timeline" aria-label="Career timeline">
+                <div class="t"><strong>1997 (10)</strong> Kidney transplant. Got a second shot.</div>
+                <div class="t"><strong>2003–2008</strong> First pattern recognition prototypes. Hip surgery → pain → focus.</div>
+                <div class="t"><strong>2009–2015</strong> Deep into C# & automation. Stroke → kept going.</div>
+                <div class="t"><strong>2016–2020</strong> Voice interfaces, fitness over 20 years of physio.</div>
+                <div class="t"><strong>2021–2022</strong> Modern ML frameworks, local AI experiments.</div>
+                <div class="t"><strong>2023–2024</strong> 109 days of detox, mindful masculinity, standards over niceness.</div>
+                <div class="t"><strong>2025</strong> GoogolPlex 2025 dropped. Alessia launched. Building in public.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `,
+      stories: `
+        <section id="stories">
+          <h2>My Stories</h2>
+          <p class="lead">Life tried to break me. I told it to fuck off and kept building.</p>
+          <div class="grid two" role="list">
+            <article class="card" role="listitem">
+              <h3>Never Give Up</h3>
+              <p>At 10, my kidneys failed. Doctors called me a lost cause, but my dad’s donation and my stubborn ass proved them wrong. Quitting ain’t my style.</p>
+              <p class="quote">“Fear’s just noise – ignore it and move.”</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Prove Them Wrong</h3>
+              <p>They said my wheelchair defined me. I taught myself coding, music, design – and built a life they couldn’t dream of. Fuck their limits.</p>
+              <p class="quote">“I’m more than any label they stick on me.”</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Pain into Power</h3>
+              <p>Hip surgery left me in hell. No meds, no mercy. I got up anyway, turned pain into fuel, and learned action beats whining every damn time.</p>
+              <p class="quote">“Start now, win later.”</p>
+            </article>
+          </div>
+        </section>
+      `,
+      independence: `
+        <section id="independence">
+          <h2>Why Independence?</h2>
+          <p class="lead">Fuck the cloud. Own your shit. My AI gives you control – no Big Tech, no trackers, no bullshit. Privacy’s crucial, but I don’t cry over spilled data – I make sure it stays yours.</p>
+          <p>I’ve fought for my freedom against pain, doubt, and bullshit labels. That’s why my tech runs local, uses legit APIs, and cuts through the noise. Live your way, not theirs.</p>
+        </section>
+      `,
+      contact: `
+        <section id="contact">
+          <h2>Contact</h2>
+          <p class="lead">Want AI that doesn’t suck? Send me:</p>
+          <div class="rules-box">
+            <ul>
+              <li>Problem & goal (2–3 sentences)</li>
+              <li>Context/constraints</li>
+              <li>Budget range & timeline</li>
+              <li>Decision-maker: Yes/No</li>
+            </ul>
+            <p><strong>Note:</strong> I reply only if we’re a fit. No "fast & cheap" or "privacy later."</p>
           </div>
           <div class="cta">
-            <a class="btn" href="#projects">See Projects</a>
-            <a class="btn" href="#contact">Work with Me</a>
+            <a class="btn" href="mailto:Contact@aestheticdreams.net">Request Scope</a>
+            <a class="btn" href="https://github.com/AestheticDreamsAI" target="_blank" rel="noopener">See Proof</a>
+            <a class="btn" href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a>
+            <a class="btn" href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">Alessia IG</a>
           </div>
-        </div>
-      </section>`,
-      projects:`<section id="projects">
-        <h2>Projects</h2>
-        <p class="lead">Local-first, privacy-first, real outcomes.</p>
-        <div class="grid two">
-          <div class="card">
-            <h3>GoogolPlex 2025</h3>
-            <p>Advanced AI processing engine designed for maximum privacy and local computation. No data ever leaves your device.</p>
-            <div class="meta"><span>Status: Active</span><span>Local-First</span></div>
-          </div>
-          <div class="card">
-            <h3>LAMBot-AI</h3>
-            <p>Intelligent automation assistant that runs entirely on your hardware. Privacy-focused, efficient, and powerful.</p>
-            <div class="meta"><span>Status: Beta</span><span>Privacy-First</span></div>
-          </div>
-          <div class="card">
-            <h3>Cherry-Lite</h3>
-            <p>Lightweight AI framework optimized for accessibility and ease of use. Works great on older hardware.</p>
-            <div class="meta"><span>Status: Released</span><span>Open Source</span></div>
-          </div>
-          <div class="card">
-            <h3>PiperLing</h3>
-            <p>Natural language processing tools that respect your privacy. All computation happens locally on your machine.</p>
-            <div class="meta"><span>Status: Development</span><span>Zero-Tracking</span></div>
-          </div>
-        </div>
-      </section>`,
-      about:`<section id="about">
-        <h2>About Me</h2>
-        <p class="lead">Independence and results. Kidney transplant, surgeries, stroke. Coding AI since 2003.</p>
-        <div class="card">
-          <p>Life threw everything at me - health challenges, setbacks, moments when giving up seemed easier. But here's what I learned: true strength isn't about avoiding the fall, it's about getting back up and building something better.</p>
-          <p>I've been working with AI since 2003, long before it became the buzzword it is today. Through kidney transplants, multiple surgeries, and a stroke, I kept coding because I believe in technology that serves people, not corporations.</p>
-          <p>My disability gives me a unique perspective on accessibility and user-centered design. Every project I build is tested for real-world usability because I live in that real world every day.</p>
-          <p>Independence isn't just my philosophy - it's my survival strategy. When you can't rely on systems built by others, you learn to build your own. That's why all my AI runs locally, respects privacy, and puts control back in your hands.</p>
-        </div>
-      </section>`,
-      stories:`<section id="stories">
-        <h2>Stories</h2>
-        <p class="lead">Life tried to break me. I kept building.</p>
-        <div class="grid">
-          <div class="card">
-            <h3>The Kidney Transplant</h3>
-            <p>2019 was supposed to be my breakthrough year. Instead, I spent it in hospitals, on dialysis, fighting for a transplant. But even with tubes in my arm, I was coding on my laptop in the hospital bed.</p>
-            <p>That experience taught me something crucial: when your body fails you, your mind becomes your superpower. Every line of code was an act of defiance against the circumstances trying to stop me.</p>
-          </div>
-          <div class="card">
-            <h3>Coding Through Recovery</h3>
-            <p>Post-surgery recovery is brutal. Pain medication clouds your thinking, but I found that coding actually helped. It gave me focus, purpose, something to build when everything else was falling apart.</p>
-            <p>Some of my best algorithmic breakthroughs came during those long nights when sleep was impossible. Pain became fuel. Limitation became innovation.</p>
-          </div>
-          <div class="card">
-            <h3>The Stroke</h3>
-            <p>Just when I thought I'd overcome the biggest challenge, life dealt another blow. The stroke affected my motor skills but not my determination. I had to relearn how to type efficiently, but I never stopped creating.</p>
-            <p>That setback led to my focus on accessibility-first design. When you've experienced limitations firsthand, you build technology that works for everyone, not just the privileged few.</p>
-          </div>
-        </div>
-      </section>`,
-      independence:`<section id="independence">
-        <h2>Why Independence?</h2>
-        <p class="lead">Screw clouds. Own your data. My AI gives you control.</p>
-        <div class="card">
-          <h3>The Problem with Big Tech AI</h3>
-          <p>Every major AI service today is designed to extract value from you. Your data goes to their servers, gets analyzed by their algorithms, and feeds their business model. You're not the customer - you're the product.</p>
-          <p>Cloud-based AI means your private thoughts, documents, and conversations are processed on someone else's computer. That's not intelligence - that's surveillance capitalism with a friendly interface.</p>
-        </div>
-        <div class="card">
-          <h3>Local-First Changes Everything</h3>
-          <p>When AI runs on your hardware, you control everything. Your data never leaves your device. No terms of service can suddenly change your access. No internet outage kills your workflow. No company can decide to shut down your tools.</p>
-          <p>Local-first AI means true digital independence. It's not just about privacy - it's about sovereignty over your digital life.</p>
-        </div>
-        <div class="card">
-          <h3>Privacy is a Human Right</h3>
-          <p>I didn't survive medical crises and personal setbacks just to hand my digital life over to Silicon Valley. Privacy isn't paranoia - it's self-respect.</p>
-          <p>Every project I build starts with one question: "How can this work without compromising the user's autonomy?" The answer is always local-first, privacy-first, user-first.</p>
-        </div>
-      </section>`,
-      contact:`<section id="contact">
-        <h2>Contact</h2>
-        <p class="lead">Want AI that doesn't suck? Email me.</p>
-        <div class="card">
-          <p>I work with individuals and organizations who value privacy, independence, and results. Whether you need custom AI solutions, consulting on local-first architecture, or just want to discuss the future of privacy-respecting technology.</p>
-          <p>No sales teams, no account managers, no bureaucracy. Just direct communication with the person who builds the solutions.</p>
-          <div class="cta">
-            <a class="btn" href="mailto:contact@aestheticdreams.net">Email Me Directly</a>
-          </div>
-          <p><small>Response time: Usually within 24 hours. I read every email personally.</small></p>
-        </div>
-      </section>`
+        </section>
+      `
     };
 
-```
-const navLinks=document.querySelectorAll('.nav-links a,.sheet a');
-const main=document.getElementById('main');
-const btn=document.getElementById('menuBtn');
-const mobile=document.getElementById('mobileMenu');
+    // Navigation
+    const navLinks = document.querySelectorAll('.nav-links a, .sheet a');
+    const main = document.getElementById('main');
 
-function setActive(hash){
-  navLinks.forEach(a=>{
-    a.classList.toggle('active',a.getAttribute('href')===hash)
-  });
-}
+    function setActiveLink(hash) {
+      navLinks.forEach(a => {
+        const isActive = a.getAttribute('href') === hash;
+        a.classList.toggle('active', isActive);
+        if (isActive) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+    }
 
-function loadPage(hash){
-  const page=(hash||'#home').slice(1);
-  main.innerHTML=pages[page]||pages.home;
-  setActive(`#${page}`);
-  window.scrollTo(0,0);
-  mobile.classList.add('hidden');
-}
+    function loadPage(hash) {
+      const page = hash.slice(1) || 'home';
+      main.innerHTML = pages[page] || pages.home;
+      setActiveLink(`#${page}`);
+      window.scrollTo(0, 0); // Scroll to top on page change
+    }
 
-function handleNavClick(e) {
-  e.preventDefault();
-  const hash = e.target.getAttribute('href');
-  history.pushState(null, null, hash);
-  loadPage(hash);
-}
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobileMenu');
 
-navLinks.forEach(link => {
-  link.addEventListener('click', handleNavClick);
-});
+    function toggleMenu(force) {
+      const willOpen = force ?? mobile.classList.contains('hidden');
+      mobile.classList.toggle('hidden', !willOpen);
+      btn.setAttribute('aria-expanded', willOpen);
+    }
 
-btn.addEventListener('click', () => {
-  mobile.classList.toggle('hidden');
-});
+    btn.addEventListener('click', () => toggleMenu());
+    mobile.addEventListener('click', e => { if (e.target === mobile) toggleMenu(false); });
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
 
-mobile.addEventListener('click', (e) => {
-  if (e.target === mobile) {
-    mobile.classList.add('hidden');
-  }
-});
+    // Handle navigation
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const hash = link.getAttribute('href');
+        history.pushState(null, null, hash);
+        loadPage(hash);
+      });
+    });
 
-document.getElementById('year').textContent = new Date().getFullYear();
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-window.addEventListener('load', () => loadPage(location.hash || '#home'));
-window.addEventListener('popstate', () => loadPage(location.hash || '#home'));
+    // Initial load
+    window.addEventListener('load', () => {
+      const hash = location.hash || '#home';
+      loadPage(hash);
+    });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !mobile.classList.contains('hidden')) {
-    mobile.classList.add('hidden');
-  }
-});
-```
-
+    // Handle back/forward navigation
+    window.addEventListener('popstate', () => loadPage(location.hash || '#home'));
   </script>
 </body>
 </html>
