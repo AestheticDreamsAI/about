@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AestheticDreams</title>
+    <title>Phil Frei - AestheticDreams</title>
     <style>
         * {
             margin: 0;
@@ -24,7 +24,7 @@
         .nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             margin-bottom: 50px;
             padding: 20px 0;
             border-bottom: 1px solid #333;
@@ -82,15 +82,16 @@
             font-style: italic;
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.5;
         }
 
         .intro-text {
             color: #b0b0b0;
             line-height: 1.8;
             font-size: 1rem;
-            text-align: center;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 40px auto;
+            text-align: center;
         }
 
         .project-grid {
@@ -129,15 +130,15 @@
 
         .project-description {
             color: #b0b0b0;
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .project-link {
             display: inline-block;
-            margin-top: 10px;
             color: #64b5f6;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .project-link:hover {
@@ -161,10 +162,15 @@
             color: #64b5f6;
             text-decoration: none;
             font-size: 0.95rem;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
         .contact-link:hover {
-            text-decoration: underline;
+            border-color: #64b5f6;
+            background: #1a1a1a;
         }
 
         .highlight {
@@ -189,6 +195,16 @@
 
         .about-content p {
             margin-bottom: 20px;
+        }
+
+        .quote-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #64b5f6;
+            font-style: italic;
+            color: #64b5f6;
         }
 
         @media (max-width: 600px) {
@@ -228,20 +244,20 @@
     <!-- Home Section -->
     <div id="home" class="content-section active">
         <div class="header">
-            <h1 class="title">AestheticDreams</h1>
-            <p class="subtitle">Developer & Designer building <span class="highlight">AI tools that matter</span> — useful, elegant, and privacy-friendly.</p>
+            <h1 class="title">Phil Frei</h1>
+            <p class="subtitle">37, wheelchair, <span class="highlight">zero fucks given</span>. I build AI tools that actually work.</p>
         </div>
 
         <div class="intro-text">
-            <p>I've been fascinated by artificial intelligence for over 20 years. My focus is on privacy-first, local-first AI architectures that put users in control. From voice assistants to home automation, I build tools that work offline and respect your data.</p>
+            <p>I've been coding AI for 20+ years, taught myself everything. While others talked, I built. Privacy-first systems, local processing, automated influencers - that's my thing. Nobody believed in me? Screw that, I did.</p>
         </div>
     </div>
 
     <!-- Projects Section -->
     <div id="projects" class="content-section">
         <div class="header">
-            <h1 class="title">Projects</h1>
-            <p class="subtitle">Building the future of <span class="highlight">privacy-first AI</span> — one project at a time.</p>
+            <h1 class="title">What I Build</h1>
+            <p class="subtitle">Projects that <span class="highlight">actually work</span>, not just look pretty.</p>
         </div>
 
         <div class="project-grid">
@@ -250,25 +266,26 @@
                     <div class="project-title">GoogolPlex 2025</div>
                     <div class="project-year">Sep 2025</div>
                 </div>
-                <p class="project-description">
-                    A patch-proof, local Siri plugin framework for iOS — inspired by the original GoogolPlex hack (2014), but open, extensible and privacy-first. Python-based plugins, MIT licensed.
+                <div class="project-description">
+                    Remember the legendary 2014 GoogolPlex hack? That was awesome until Apple killed it. So I rebuilt it - better, cleaner, open source. Local Siri replacement with Python plugins. Runs completely offline, your data stays yours.
                     <br><br>
-                    <strong style="color: #ffffff;">Tech:</strong> Python, iOS, Local Processing, Plugin Architecture
-                </p>
-                <a href="https://github.com/AestheticDreamsAI/googolplex-2025" class="project-link">→ View on GitHub</a>
+                    <strong style="color: #ffffff;">Tech:</strong> Python, iOS, local processing, MIT license
+                </div>
+                <a href="https://github.com/AestheticDreamsAI/googolplex-2025" class="project-link">→ Check it out</a>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">PiperLing</div>
-                    <div class="project-year">2024</div>
+                    <div class="project-title">Alessia Seelentanz</div>
+                    <div class="project-year">Live Project</div>
                 </div>
-                <p class="project-description">
-                    A powerful open-source interpreter AI based on Piper TTS, Ollama or GPT-4o, and C#. Designed for simple and fast speech translation and synthesis with a companion web UI.
+                <div class="project-description">
+                    Fully automated AI influencer. Writes her own content, posts consistently, has a real personality. No copy-paste bullshit - authentic content that people actually engage with. Working on viral optimization now - SEO isn't my strongest area yet, but I'm learning.
                     <br><br>
-                    <strong style="color: #ffffff;">Tech:</strong> C#, JavaScript, Piper TTS, Ollama, Web UI
-                </p>
-                <a href="https://github.com/AestheticDreamsAI/PiperLing" class="project-link">→ View on GitHub</a>
+                    <strong style="color: #ffffff;">Website:</strong> <a href="https://alessia-seelentanz.de/" style="color: #64b5f6;">alessia-seelentanz.de</a><br>
+                    <strong style="color: #ffffff;">Instagram:</strong> <a href="https://www.instagram.com/alessiaseelentanz/" style="color: #64b5f6;">@alessiaseelentanz</a><br>
+                    <strong style="color: #ffffff;">Status:</strong> Running, SEO optimization in progress
+                </div>
             </div>
 
             <div class="project-card">
@@ -276,12 +293,25 @@
                     <div class="project-title">Luxa Voice Suite</div>
                     <div class="project-year">Feb 2025</div>
                 </div>
-                <p class="project-description">
-                    Complete Home Assistant AI voice integration with Ollama proxy. Multi-language support with Python and C# implementations for maximum flexibility.
+                <div class="project-description">
+                    Home Assistant with AI voice integration. Built in Python and C# because I like options. Runs completely local with Ollama. Your smart home gets actually smart without Google listening in.
                     <br><br>
-                    <strong style="color: #ffffff;">Tech:</strong> Python, C#, Home Assistant, Ollama, Voice Recognition
-                </p>
-                <a href="https://github.com/AestheticDreamsAI/Luxa" class="project-link">→ View on GitHub</a>
+                    <strong style="color: #ffffff;">Tech:</strong> Python, C#, Home Assistant, Ollama, local speech recognition
+                </div>
+                <a href="https://github.com/AestheticDreamsAI/Luxa" class="project-link">→ Check it out</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">PiperLing</div>
+                    <div class="project-year">2024</div>
+                </div>
+                <div class="project-description">
+                    Speech translation system with Piper TTS and Ollama. Fast, accurate, with a clean web interface. Because speech should work seamlessly, not make you wait around.
+                    <br><br>
+                    <strong style="color: #ffffff;">Tech:</strong> C#, JavaScript, Piper TTS, Ollama, Web UI
+                </div>
+                <a href="https://github.com/AestheticDreamsAI/PiperLing" class="project-link">→ Check it out</a>
             </div>
 
             <div class="project-card">
@@ -289,12 +319,12 @@
                     <div class="project-title">LAMBot-AI</div>
                     <div class="project-year">May 2024</div>
                 </div>
-                <p class="project-description">
-                    A Language Action Model (LAM) chatbot built with C# and ML.NET. Recognizes user intents and executes specific actions like launching applications through natural language.
+                <div class="project-description">
+                    Language Action Model with ML.NET. Doesn't just chat - actually does stuff. Recognizes what you want and executes real actions like launching apps. AI that works, not just talks.
                     <br><br>
-                    <strong style="color: #ffffff;">Tech:</strong> C#, ML.NET, NLP, Intent Recognition
-                </p>
-                <a href="https://github.com/AestheticDreamsAI/LAMBot-AI" class="project-link">→ View on GitHub</a>
+                    <strong style="color: #ffffff;">Tech:</strong> C#, ML.NET, NLP, intent recognition, action execution
+                </div>
+                <a href="https://github.com/AestheticDreamsAI/LAMBot-AI" class="project-link">→ Check it out</a>
             </div>
 
             <div class="project-card">
@@ -302,12 +332,12 @@
                     <div class="project-title">Cherry-Lite</div>
                     <div class="project-year">2024</div>
                 </div>
-                <p class="project-description">
-                    Simple offline AI client based on the LAMBot-AI framework. Recognizes user intents and performs actions using machine learning and NLP — completely offline.
+                <div class="project-description">
+                    Lightweight offline AI client. Built on LAMBot framework but stripped down. Completely offline, no cloud dependencies. Your AI works even when the internet doesn't.
                     <br><br>
-                    <strong style="color: #ffffff;">Tech:</strong> C#, ML.NET, Offline Processing, NLP
-                </p>
-                <a href="https://github.com/AestheticDreamsAI/Cherry-Lite" class="project-link">→ View on GitHub</a>
+                    <strong style="color: #ffffff;">Tech:</strong> C#, ML.NET, offline processing, local AI
+                </div>
+                <a href="https://github.com/AestheticDreamsAI/Cherry-Lite" class="project-link">→ Check it out</a>
             </div>
         </div>
     </div>
@@ -315,52 +345,67 @@
     <!-- About Section -->
     <div id="about" class="content-section">
         <div class="header">
-            <h1 class="title">About</h1>
-            <p class="subtitle">The story behind the <span class="highlight">curiosity-driven development</span>.</p>
+            <h1 class="title">The Real Story</h1>
+            <p class="subtitle">No bullshit, just <span class="highlight">how it actually went down</span>.</p>
         </div>
 
         <div class="about-content">
-            <p>I've been fascinated by artificial intelligence since I was a kid. Back in 2003, before I even knew what "machine learning" meant, I built my first AI prototype — a simple pattern recognition system that could barely distinguish between basic shapes. It was crude, but it worked, and more importantly, it sparked a curiosity that has never stopped growing.</p>
+            <p>I'm 37, in a wheelchair since birth, and I've been building AI since 2003 - before "machine learning" was cool. While teachers told me what I'd never achieve, I was already coding my first pattern recognition system.</p>
+
+            <div class="quote-box">
+                "Nobody believed in me - but I did."
+            </div>
 
             <h3>The Journey</h3>
-            <p>Over the past two decades, I've evolved from curious tinkerer to building production-ready AI systems. My work spans voice recognition, text-to-speech synthesis, home automation, and natural language processing — always with a focus on privacy-first, local-first architectures.</p>
+            <p>Had a kidney transplant at 10. Hip surgery that left me screaming in pain with no medication. A stroke that made me want to die. Each time, I got back up. Not because I'm some inspirational poster - because staying down wasn't an option.</p>
 
-            <h3>Current Projects</h3>
-            <p>Right now I'm deep into <strong>GoogolPlex 2025</strong> — a modern take on the legendary 2014 iOS Siri hack, but rebuilt as an open-source, extensible framework. I'm also working on the <strong>Luxa Voice Suite</strong> for Home Assistant integration and various speech synthesis projects.</p>
+            <p>Taught myself programming, web design, AI development. No fancy degrees, no bootcamps. Just raw curiosity and refusing to accept limitations others tried to put on me.</p>
 
-            <h3>Philosophy</h3>
-            <p>I believe the most powerful AI should run on your own devices. That's why I build with C#, Python, and focus on offline-capable architectures. When your AI assistant runs locally, you maintain control over your data, your conversations, and your digital autonomy.</p>
+            <h3>What I'm Working On Now</h3>
+            <p><strong>GoogolPlex 2025</strong> - rebuilding the legendary iOS Siri hack as an open-source framework. <strong>Automated influencers</strong> that create authentic content (still figuring out the viral part). <strong>Local-first AI</strong> that respects your privacy because your data shouldn't be everyone else's business.</p>
 
-            <h3>Tech Stack</h3>
-            <p><strong>Languages:</strong> C#, Python, JavaScript<br>
-            <strong>AI/ML:</strong> ML.NET, Ollama, OpenAI APIs, Local LLMs<br>
-            <strong>Voice Tech:</strong> Piper TTS, Speech Recognition<br>
+            <div class="quote-box">
+                "I can turn pain into power - and that's exactly what I did."
+            </div>
+
+            <h3>My Philosophy</h3>
+            <p>Your AI should run on YOUR devices. When everything processes locally, you control your data, your conversations, your digital life. No cloud dependencies, no data harvesting, no compromises.</p>
+
+            <p>I don't build AI to impress investors. I build it to solve real problems for real people who want their tech to work without selling their soul to Big Tech.</p>
+
+            <h3>Tech I Work With</h3>
+            <p><strong>Languages:</strong> C#, Python, JavaScript (whatever gets the job done)<br>
+            <strong>AI/ML:</strong> ML.NET, Ollama, OpenAI APIs, local LLMs<br>
+            <strong>Voice:</strong> Piper TTS, speech recognition, voice synthesis<br>
+            <strong>Content:</strong> Automated generation, persona design, still learning SEO<br>
             <strong>Platforms:</strong> iOS, Home Assistant, Web, Desktop</p>
 
-            <p style="margin-top: 30px; font-style: italic; color: #64b5f6;">Building AI that respects privacy, one project at a time.</p>
+            <div class="quote-box">
+                "My disability isn't a limitation - it's my path to solutions others never think of."
+            </div>
         </div>
     </div>
 
     <!-- Contact Section -->
     <div id="contact" class="content-section">
         <div class="header">
-            <h1 class="title">Contact</h1>
-            <p class="subtitle">Let's build something <span class="highlight">amazing together</span>.</p>
+            <h1 class="title">Let's Build Something</h1>
+            <p class="subtitle">Got an idea that seems <span class="highlight">impossible</span>? Perfect.</p>
         </div>
 
         <div class="contact-content">
-            <p style="margin-bottom: 30px; color: #b0b0b0; font-size: 1.1rem;">Always open to collaborating on AI, open-source, and experimental projects.</p>
+            <p style="margin-bottom: 30px; color: #b0b0b0; font-size: 1.1rem;">
+                I'm always up for collaborating on AI projects, open-source tools, or anything that pushes boundaries. Privacy-first architectures, automated content systems, local AI - let's talk.
+            </p>
             
             <div class="contact-links">
-                <a href="mailto:contact@aestheticdreams.net" class="contact-link">📧 contact@aestheticdreams.net</a>
-                <a href="https://github.com/AestheticDreamsAI" class="contact-link">🚀 AestheticDreamsAI</a>
+                <a href="mailto:contact@aestheticdreams.net" class="contact-link">📧 Email</a>
+                <a href="https://github.com/AestheticDreamsAI" class="contact-link">🚀 GitHub</a>
             </div>
 
-            <p style="color: #888; line-height: 1.6;">
-                Whether you're working on privacy-preserving AI, exploring local-first architectures, or just have an idea that seems impossible — I'd love to hear about it. The best projects start with curious conversations.
+            <p style="color: #888; line-height: 1.6; font-style: italic;">
+                Best projects start with curious conversations. Let's build tools that matter - and have some fun doing it.
             </p>
-
-            <p style="margin-top: 20px; color: #64b5f6; font-size: 0.9rem; font-style: italic;">Let's build tools that matter — and have fun while doing it.</p>
         </div>
     </div>
 
