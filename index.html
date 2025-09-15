@@ -6,8 +6,6 @@
   <title>Phil Frei – AestheticDreams | Privacy‑First, Local‑First AI</title>
   <meta name="description" content="I build AI that doesn’t screw you over – local, private, built for freedom. Check my projects, my story, my vibe." />
   <meta name="theme-color" content="#0f0f0f" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0f0f0f;
@@ -28,7 +26,7 @@
     }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    img { max-width: 100%; height: auto; border-radius: 12px; }
+    img { max-width: 100%; height: auto; border-radius: 8px; } /* Weniger Rundungen */
 
     /* Shell */
     .wrap { max-width: 1120px; margin: 0 auto; padding: 20px; }
@@ -68,7 +66,7 @@
     .nav-links a {
       color: var(--muted);
       padding: 10px 12px;
-      border-radius: 10px;
+      border-radius: 6px; /* Weniger Rundungen */
       border: 1px solid transparent;
     }
     .nav-links a[aria-current="page"],
@@ -83,7 +81,7 @@
       gap: 4px;
       padding: 10px;
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 6px; /* Weniger Rundungen */
       background: var(--panel2);
       cursor: pointer;
     }
@@ -129,7 +127,7 @@
     }
     .sheet a {
       padding: 12px 10px;
-      border-radius: 10px;
+      border-radius: 6px; /* Weniger Rundungen */
       color: #dfe9ff;
       border: 1px solid transparent;
     }
@@ -152,7 +150,7 @@
       font-size: 0.8rem;
     }
     h1 {
-      font-family: Playfair Display, serif;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.07;
       margin: 0.2rem 0;
       font-size: clamp(2rem, 6vw, 3.4rem);
@@ -187,9 +185,10 @@
       align-items: center;
       gap: 8px;
       padding: 10px 14px;
-      border-radius: 12px;
+      border-radius: 6px; /* Weniger Rundungen */
       border: 1px solid var(--line);
       background: var(--panel2);
+      font-weight: 600;
     }
     .btn:hover {
       border-color: var(--brand);
@@ -201,7 +200,7 @@
       border-top: 1px solid var(--line);
     }
     h2 {
-      font-family: Playfair Display, serif;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       font-size: 1.6rem;
       margin: 0 0 12px;
     }
@@ -223,7 +222,7 @@
     .card {
       background: var(--panel2);
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 8px; /* Weniger Rundungen */
       padding: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
@@ -278,10 +277,31 @@
       border-left: 4px solid var(--brand);
       background: var(--panel2);
       padding: 16px;
-      border-radius: 10px;
+      border-radius: 8px; /* Weniger Rundungen */
       margin: 14px 0;
       color: #cfe6ff;
       font-style: italic;
+    }
+
+    /* Rules Box */
+    .rules-box {
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .rules-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .rules-box li {
+      margin-bottom: 8px;
+    }
+    .rules-box li::before {
+      content: "→ ";
+      color: var(--brand);
     }
 
     /* Footer */
@@ -346,15 +366,15 @@
           <div>
             <p class="kicker">Privacy‑First • Local‑First • Independence Always • No Bullshit</p>
             <h1>Phil Frei</h1>
-            <p class="sub">37, in a wheelchair, <strong>zero fucks given</strong>. I build AI that doesn’t screw you over – local, private, built for freedom. I care about privacy, but I don’t cry over spilled data. If it doesn’t set you free, I don’t build it.</p>
+            <p class="sub">37, wheelchair, zero fucks given. I build AI that <strong>doesn’t screw you</strong> — local, private, free. <strong>Solo builder.</strong> No babysitting. No lock-in. If you want leadership, not excuses — keep reading.</p>
             <div class="chips">
               <span class="chip">GoogolPlex 2025 (legal & patch-proof)</span>
               <span class="chip">Automated Influencers</span>
               <span class="chip">Voice & Home Assistant</span>
             </div>
             <div class="cta">
-              <a class="btn" href="#projects">Check My Work</a>
-              <a class="btn" href="#contact">Hit Me Up</a>
+              <a class="btn" href="#projects">See Projects</a>
+              <a class="btn" href="#contact">Work with Me (Solo Only)</a>
             </div>
           </div>
           <div>
@@ -365,31 +385,47 @@
       projects: `
         <section id="projects">
           <h2>What I Build</h2>
-          <p class="lead">Stuff that <em>actually</em> works – no cloud bullshit, just clean code and real results.</p>
+          <p class="lead">Stuff that <em>works</em> — no cloud bullshit, just real outcomes.</p>
+          <div class="rules-box">
+            <h3>How I Work</h3>
+            <ul>
+              <li>Solo delivery. I handle architecture, build, and handover.</li>
+              <li>Local-first. No tracking, no lock-in, no cloud nonsense.</li>
+              <li>Direct comms. Async, clear, no status-meeting circus.</li>
+              <li>Scope > blabla. I say <strong>no</strong> when it’s dumb.</li>
+              <li>Project-based. No hourly billing bullshit.</li>
+              <li>Ownership. Code and docs are yours.</li>
+            </ul>
+            <p><strong>Not compatible if:</strong> You want "fast & cheap," "privacy later," or "OpenAI offline for free."</p>
+          </div>
           <div class="grid two" role="list">
             <article class="card" role="listitem">
               <div class="meta"><span><strong>GoogolPlex 2025</strong></span><span>Live & Legal</span></div>
               <h3>iOS Plugin Framework Apple Can’t Kill</h3>
+              <p><strong>Outcome:</strong> Extend iOS legally, patch-proof.</p>
               <p>Official Shortcuts + Safari Redirects. No shady hacks. Python plugins, 100% local, slick glass UI.</p>
-              <p><a href="https://gplex.dev" target="_blank" rel="noopener">Website</a> · <a href="https://github.com/AestheticDreamsAI/googolplex-2025" target="_blank" rel="noopener">GitHub</a></p>
+              <p><a href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a> · <a href="https://github.com/AestheticDreamsAI/googolplex-2025" target="_blank" rel="noopener">See Proof</a></p>
             </article>
             <article class="card" role="listitem">
               <div class="meta"><span><strong>Alessia Seelentanz</strong></span><span>Live Experiment</span></div>
               <h3>Automated Influencer with Real Voice</h3>
-              <p>German-speaking lifestyle persona. Writes her own posts, stays real, interacts like a human. Built for organic growth.</p>
-              <p><a href="https://alessia-seelentanz.de/" target="_blank" rel="noopener">Website</a> · <a href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">Instagram</a></p>
+              <p><strong>Outcome:</strong> Consistent persona, zero spam, real engagement.</p>
+              <p>German-speaking lifestyle persona. Writes her own posts, stays real, interacts like a human.</p>
+              <p><a href="https://alessia-seelentanz.de/" target="_blank" rel="noopener">Open Spec</a> · <a href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">See Proof</a></p>
             </article>
             <article class="card" role="listitem">
               <div class="meta"><span><strong>Luxa Voice Suite</strong></span><span>Feb 2025</span></div>
               <h3>Home Assistant That Doesn’t Spy</h3>
-              <p>Python + C# voice pipeline with Ollama. Fully local, so your smart home stays your business.</p>
-              <p><a href="https://github.com/AestheticDreamsAI/Luxa" target="_blank" rel="noopener">GitHub</a></p>
+              <p><strong>Outcome:</strong> Private, low-latency voice control at home.</p>
+              <p>Python voice pipeline with Ollama. Fully local, your smart home stays your business.</p>
+              <p><a href="https://github.com/AestheticDreamsAI/Luxa" target="_blank" rel="noopener">See Proof</a></p>
             </article>
             <article class="card" role="listitem">
               <div class="meta"><span><strong>PiperLing</strong></span><span>2024</span></div>
               <h3>Fast Speech Translation</h3>
+              <p><strong>Outcome:</strong> Offline real-time translation pipelines.</p>
               <p>Piper TTS + Ollama with a no-frills web UI. Built for speed and stability.</p>
-              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">GitHub</a></p>
+              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
             </article>
           </div>
         </section>
@@ -399,10 +435,10 @@
           <h2>About Me</h2>
           <div class="grid two">
             <div>
-              <p class="lead"><strong>The Short Version:</strong> I turn pain into power. Kidney transplant at 10. Surgeries. A stroke. Been coding AI since 2003 because fuck giving up.</p>
+              <p class="lead">I love independence and results. Kidney transplant at 10, years of surgeries, a stroke. No pity, just decisions. Coding AI since 2003 – first for myself, now for people who want real shit.</p>
               <div class="quote">“When I legally bypassed a company firewall while everyone else was stuck, they stopped seeing a guy in a wheelchair – they saw a badass.”</div>
-              <p><strong>Philosophy:</strong> Independence is my middle name. I build tech that doesn’t kiss Big Tech’s ass – local AI, no clouds, no drama. Privacy’s crucial, but I don’t cry over spilled data. It’s about giving you control and real connections with people who get my vibe and respect my freedom.</p>
-              <p><strong>Today:</strong> I make tools for people who give a shit about freedom. I ship what works, ditch what doesn’t, and live by my own damn rules.</p>
+              <p>Your data’s yours. My tech runs local, uses legit APIs, no hacks. Privacy matters, but I don’t cry over spilled data. I build what can’t be patched away and vibe with people who respect my freedom.</p>
+              <p><strong>Today:</strong> I ship tools for those who give a damn about control. No fluff, no excuses, just my rules.</p>
               <p class="lead" style="margin-top:10px"><strong>Tech:</strong> C#, Python, JavaScript • ML.NET, Ollama, local LLMs • Piper TTS • iOS Shortcuts • Home Assistant</p>
             </div>
             <div>
@@ -423,12 +459,12 @@
       stories: `
         <section id="stories">
           <h2>My Stories</h2>
-          <p class="lead">Life tried to knock me down. I flipped it the bird and kept going.</p>
+          <p class="lead">Life tried to break me. I told it to fuck off and kept building.</p>
           <div class="grid two" role="list">
             <article class="card" role="listitem">
               <h3>Never Give Up</h3>
               <p>At 10, my kidneys failed. Doctors called me a lost cause, but my dad’s donation and my stubborn ass proved them wrong. Quitting ain’t my style.</p>
-              <p class="quote">“Fear isn’t a stop sign – it’s a guidepost.”</p>
+              <p class="quote">“Fear’s just noise – ignore it and move.”</p>
             </article>
             <article class="card" role="listitem">
               <h3>Prove Them Wrong</h3>
@@ -446,18 +482,27 @@
       independence: `
         <section id="independence">
           <h2>Why Independence?</h2>
-          <p class="lead">Fuck the cloud. Own your shit. I build tech that gives you control – no Big Tech, no trackers, no bullshit. Privacy’s important, but I don’t cry over spilled data – I make sure it stays yours.</p>
-          <p>I’ve fought for my freedom against pain, doubt, and bullshit labels. That’s why my AI runs local, uses legit APIs, and cuts through the noise. Live on your terms, not theirs.</p>
+          <p class="lead">Fuck the cloud. Own your shit. My AI gives you control – no Big Tech, no trackers, no bullshit. Privacy’s crucial, but I don’t cry over spilled data – I make sure it stays yours.</p>
+          <p>I’ve fought for my freedom against pain, doubt, and bullshit labels. That’s why my tech runs local, uses legit APIs, and cuts through the noise. Live your way, not theirs.</p>
         </section>
       `,
       contact: `
         <section id="contact">
           <h2>Contact</h2>
-          <p class="lead">Want AI that doesn’t suck? Hit me up.</p>
+          <p class="lead">Want AI that doesn’t suck? Send me:</p>
+          <div class="rules-box">
+            <ul>
+              <li>Problem & goal (2–3 sentences)</li>
+              <li>Context/constraints</li>
+              <li>Budget range & timeline</li>
+              <li>Decision-maker: Yes/No</li>
+            </ul>
+            <p><strong>Note:</strong> I reply only if we’re a fit. No "fast & cheap" or "privacy later."</p>
+          </div>
           <div class="cta">
-            <a class="btn" href="mailto:contact@aestheticdreams.net">Email</a>
-            <a class="btn" href="https://github.com/AestheticDreamsAI" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://gplex.dev" target="_blank" rel="noopener">GoogolPlex 2025</a>
+            <a class="btn" href="mailto:contact@aestheticdreams.net">Request Scope</a>
+            <a class="btn" href="https://github.com/AestheticDreamsAI" target="_blank" rel="noopener">See Proof</a>
+            <a class="btn" href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a>
             <a class="btn" href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">Alessia IG</a>
           </div>
         </section>
