@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AestheticDreams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #e8e8e8;
+            background-color: #0f0f0f;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #64b5f6;
+            background: #1a1a1a;
+        }
+
+        .nav-link.active {
+            color: #64b5f6;
+            background: #1a1a1a;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+            border-left: 4px solid #64b5f6;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .project-year {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        .project-description {
+            color: #b0b0b0;
+            line-height: 1.5;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .contact-content {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-link {
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #2a5298 0%, #1e3a8a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 30%;
+            background-position: 0 85%;
+            padding: 2px 0;
+        }
+
+        .about-content {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .about-content h3 {
+            color: #ffffff;
+            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-link active" onclick="showSection('home')">Home</a>
+        <a class="nav-link" onclick="showSection('projects')">Projects</a>
+        <a class="nav-link" onclick="showSection('about')">About</a>
+        <a class="nav-link" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="content-section active">
+        <div class="header">
+            <h1 class="title">AestheticDreams</h1>
+            <p class="subtitle">Developer & Designer building <span class="highlight">AI tools that matter</span> — useful, elegant, and privacy-friendly.</p>
+        </div>
+
+        <div class="intro-text">
+            <p>I've been fascinated by artificial intelligence for over 20 years. My focus is on privacy-first, local-first AI architectures that put users in control. From voice assistants to home automation, I build tools that work offline and respect your data.</p>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="content-section">
+        <div class="header">
+            <h1 class="title">Projects</h1>
+            <p class="subtitle">Building the future of <span class="highlight">privacy-first AI</span> — one project at a time.</p>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">GoogolPlex 2025</div>
+                    <div class="project-year">Sep 2025</div>
+                </div>
+                <p class="project-description">
+                    A patch-proof, local Siri plugin framework for iOS — inspired by the original GoogolPlex hack (2014), but open, extensible and privacy-first. Python-based plugins, MIT licensed.
+                    <br><br>
+                    <strong style="color: #ffffff;">Tech:</strong> Python, iOS, Local Processing, Plugin Architecture
+                </p>
+                <a href="https://github.com/AestheticDreamsAI/googolplex-2025" class="project-link">→ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">PiperLing</div>
+                    <div class="project-year">2024</div>
+                </div>
+                <p class="project-description">
+                    A powerful open-source interpreter AI based on Piper TTS, Ollama or GPT-4o, and C#. Designed for simple and fast speech translation and synthesis with a companion web UI.
+                    <br><br>
+                    <strong style="color: #ffffff;">Tech:</strong> C#, JavaScript, Piper TTS, Ollama, Web UI
+                </p>
+                <a href="https://github.com/AestheticDreamsAI/PiperLing" class="project-link">→ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Luxa Voice Suite</div>
+                    <div class="project-year">Feb 2025</div>
+                </div>
+                <p class="project-description">
+                    Complete Home Assistant AI voice integration with Ollama proxy. Multi-language support with Python and C# implementations for maximum flexibility.
+                    <br><br>
+                    <strong style="color: #ffffff;">Tech:</strong> Python, C#, Home Assistant, Ollama, Voice Recognition
+                </p>
+                <a href="https://github.com/AestheticDreamsAI/Luxa" class="project-link">→ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">LAMBot-AI</div>
+                    <div class="project-year">May 2024</div>
+                </div>
+                <p class="project-description">
+                    A Language Action Model (LAM) chatbot built with C# and ML.NET. Recognizes user intents and executes specific actions like launching applications through natural language.
+                    <br><br>
+                    <strong style="color: #ffffff;">Tech:</strong> C#, ML.NET, NLP, Intent Recognition
+                </p>
+                <a href="https://github.com/AestheticDreamsAI/LAMBot-AI" class="project-link">→ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Cherry-Lite</div>
+                    <div class="project-year">2024</div>
+                </div>
+                <p class="project-description">
+                    Simple offline AI client based on the LAMBot-AI framework. Recognizes user intents and performs actions using machine learning and NLP — completely offline.
+                    <br><br>
+                    <strong style="color: #ffffff;">Tech:</strong> C#, ML.NET, Offline Processing, NLP
+                </p>
+                <a href="https://github.com/AestheticDreamsAI/Cherry-Lite" class="project-link">→ View on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="content-section">
+        <div class="header">
+            <h1 class="title">About</h1>
+            <p class="subtitle">The story behind the <span class="highlight">curiosity-driven development</span>.</p>
+        </div>
+
+        <div class="about-content">
+            <p>I've been fascinated by artificial intelligence since I was a kid. Back in 2003, before I even knew what "machine learning" meant, I built my first AI prototype — a simple pattern recognition system that could barely distinguish between basic shapes. It was crude, but it worked, and more importantly, it sparked a curiosity that has never stopped growing.</p>
+
+            <h3>The Journey</h3>
+            <p>Over the past two decades, I've evolved from curious tinkerer to building production-ready AI systems. My work spans voice recognition, text-to-speech synthesis, home automation, and natural language processing — always with a focus on privacy-first, local-first architectures.</p>
+
+            <h3>Current Projects</h3>
+            <p>Right now I'm deep into <strong>GoogolPlex 2025</strong> — a modern take on the legendary 2014 iOS Siri hack, but rebuilt as an open-source, extensible framework. I'm also working on the <strong>Luxa Voice Suite</strong> for Home Assistant integration and various speech synthesis projects.</p>
+
+            <h3>Philosophy</h3>
+            <p>I believe the most powerful AI should run on your own devices. That's why I build with C#, Python, and focus on offline-capable architectures. When your AI assistant runs locally, you maintain control over your data, your conversations, and your digital autonomy.</p>
+
+            <h3>Tech Stack</h3>
+            <p><strong>Languages:</strong> C#, Python, JavaScript<br>
+            <strong>AI/ML:</strong> ML.NET, Ollama, OpenAI APIs, Local LLMs<br>
+            <strong>Voice Tech:</strong> Piper TTS, Speech Recognition<br>
+            <strong>Platforms:</strong> iOS, Home Assistant, Web, Desktop</p>
+
+            <p style="margin-top: 30px; font-style: italic; color: #64b5f6;">Building AI that respects privacy, one project at a time.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="content-section">
+        <div class="header">
+            <h1 class="title">Contact</h1>
+            <p class="subtitle">Let's build something <span class="highlight">amazing together</span>.</p>
+        </div>
+
+        <div class="contact-content">
+            <p style="margin-bottom: 30px; color: #b0b0b0; font-size: 1.1rem;">Always open to collaborating on AI, open-source, and experimental projects.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:contact@aestheticdreams.net" class="contact-link">📧 contact@aestheticdreams.net</a>
+                <a href="https://github.com/AestheticDreamsAI" class="contact-link">🚀 AestheticDreamsAI</a>
+            </div>
+
+            <p style="color: #888; line-height: 1.6;">
+                Whether you're working on privacy-preserving AI, exploring local-first architectures, or just have an idea that seems impossible — I'd love to hear about it. The best projects start with curious conversations.
+            </p>
+
+            <p style="margin-top: 20px; color: #64b5f6; font-size: 0.9rem; font-style: italic;">Let's build tools that matter — and have fun while doing it.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
