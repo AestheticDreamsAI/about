@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================================================
-       Phil Frei — Local-First AI (Single-File Portfolio)
-       Local assets only. No external calls. A11y + CSP + No-JS fallback.
-       ========================================================= -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -13,7 +9,6 @@
   <meta name="author" content="Phil Frei" />
   <meta name="theme-color" content="#0f0f0f" />
 
-  <!-- Open Graph / Twitter (static preview, no trackers) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Phil Frei" />
   <meta property="og:title" content="Phil Frei — Local-First AI" />
@@ -21,8 +16,6 @@
   <meta property="og:image" content="/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Content Security Policy (meta for static hosting).
-       NOTE: The nonce value here is static for the demo. In production, generate per-build/request. -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     img-src 'self' data:;
@@ -36,50 +29,32 @@
   ">
 
   <style>
-    :root{
-      --bg:#0f0f0f;--panel:#121212;--panel2:#1a1a1a;--text:#e8e8e8;--muted:#a8a8a8;
-      --brand:#64b5f6;--line:#2b2b2b;--ok:#7ee787;--warn:#f0ad4e;--danger:#ff6b6b
-    }
+    :root{--bg:#0f0f0f;--panel:#121212;--panel2:#1a1a1a;--text:#e8e8e8;--muted:#a8a8a8;--brand:#64b5f6;--line:#2b2b2b;--ok:#7ee787}
     *{box-sizing:border-box}
     html,body{margin:0}
-    body{
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background:var(--bg);color:var(--text)
-    }
+    body{font-family:system-ui, sans-serif;background:var(--bg);color:var(--text)}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     img{max-width:100%;height:auto;border-radius:8px}
     .wrap{max-width:1120px;margin:0 auto;padding:20px}
-
-    /* Skip link + focus visibility */
-    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:20px;top:10px;width:auto;height:auto;padding:8px 12px;background:#1a1a1a;border:1px solid var(--brand);border-radius:6px}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:20px;top:10px;background:#1a1a1a;padding:8px 12px;border:1px solid var(--brand)}
     :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-
-    header{
-      position:sticky;top:0;z-index:40;
-      background:rgba(15,15,15,0.75);
-      backdrop-filter:blur(10px) saturate(140%);
-      border-bottom:1px solid var(--line)
-    }
+    header{position:sticky;top:0;z-index:40;background:rgba(15,15,15,.75);backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 18px #64b5f688}
-
     .nav-links{display:none;gap:14px}
-    .nav-links a{color:var(--muted);padding:10px 12px;border-radius:6px;border:1px solid transparent}
-    .nav-links a[aria-current="page"],.nav-links a.active{color:var(--brand);background:var(--panel2);border-color:var(--line)}
-
-    .hamburger{display:inline-flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--panel2);cursor:pointer}
-    .hamburger span{display:block;width:22px;height:2px;background:#cfcfcf;border-radius:2px}
-
-    .mobile{display:block;position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+    .nav-links a{color:var(--muted);padding:10px 12px;border-radius:6px}
+    .nav-links a.active{color:var(--brand);background:var(--panel2);border:1px solid var(--line)}
+    .hamburger{display:inline-flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}
+    .hamburger span{display:block;width:22px;height:2px;background:#cfcfcf}
+    .mobile{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.3s}
     .mobile:not(.hidden){opacity:1;visibility:visible}
-    .sheet{position:absolute;right:0;top:0;height:100%;width:min(86%,360px);background:var(--panel2);border-left:1px solid var(--line);padding:18px 18px 28px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:transform .3s ease}
+    .sheet{position:absolute;right:0;top:0;height:100%;width:min(86%,360px);background:var(--panel2);border-left:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:.3s}
     .mobile:not(.hidden) .sheet{transform:translateX(0)}
-    .sheet a{padding:12px 10px;border-radius:6px;color:#dfe9ff;border:1px solid transparent}
-    .sheet a.active{background:#111c2a;border-color:#214261}
-
+    .sheet a{padding:12px 10px;border-radius:6px;color:#dfe9ff}
+    .sheet a.active{background:#111c2a;border:1px solid #214261}
     .hero{display:grid;gap:20px;align-items:center;padding:36px 0}
     .kicker{color:#9abff8;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
     h1{line-height:1.07;margin:.2rem 0;font-size:clamp(2rem,6vw,3.4rem)}
@@ -89,75 +64,34 @@
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);font-weight:600}
     .btn:hover{border-color:var(--brand)}
-
     section{padding:44px 0;border-top:1px solid var(--line)}
     h2{font-size:1.6rem;margin:0 0 12px}
     .lead{color:#cfcfcf}
-
     .grid{display:grid;gap:16px}
-    @media(min-width:720px){.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}}
-
+    @media(min-width:720px){.grid.two{grid-template-columns:repeat(2,1fr)}}
     .card{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem;margin-bottom:6px}
-    .card h3{margin:.2rem 0 .4rem;font-size:1.1rem}
-    .meta-list{list-style:none;margin:.5rem 0 0;padding:0}
-    .meta-list li{margin:.25rem 0}
-    .meta-list li strong{color:#cfe6ff}
-
-    .timeline{position:relative;margin-top:10px}
-    .timeline:before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--line)}
-    .t{position:relative;padding:0 0 14px 38px}
-    .t:before{content:"";position:absolute;left:8px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--brand)}
-    .t strong{display:inline-block;width:120px}
-
-    .quote{border-left:4px solid var(--brand);background:var(--panel2);padding:16px;border-radius:8px;margin:14px 0;color:#cfe6ff;font-style:italic}
-
-    .rules-box{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px;margin:16px 0}
-    .rules-box ul{list-style:none;padding:0;margin:0}
-    .rules-box li{margin-bottom:8px}
-    .rules-box li::before{content:"→ ";color:var(--brand)}
-
+    .meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem}
     footer{padding:36px 0;color:var(--muted)}
-    footer a{color:var(--muted);text-decoration:underline}
-
     @media(min-width:880px){.nav-links{display:flex}.hamburger{display:none}.hero{grid-template-columns:1.1fr .9fr}}
-
-    /* Reduced motion & transparency preferences */
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto !important}
-      .mobile,.sheet{transition:none !important}
-    }
-    @media (prefers-reduced-transparency: reduce){
-      header{backdrop-filter:none !important;background:var(--panel) !important}
-      .card{box-shadow:none}
-    }
   </style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
-
   <header>
-    <div class="wrap nav" aria-label="Main navigation">
-      <div class="brand" aria-label="Site brand">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Phil&nbsp;Frei</span>
-      </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#home" class="active" aria-current="page">Home</a>
+    <div class="wrap nav">
+      <div class="brand"><span class="dot"></span>Phil Frei</div>
+      <nav class="nav-links">
+        <a href="#home" class="active">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#stories">Stories</a>
         <a href="#independence">Why Independence?</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-
-    <!-- Mobile Menu / Dialog -->
     <div class="mobile hidden" id="mobileMenu">
-      <div class="sheet" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="sheet">
         <a href="#home" class="active">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
@@ -167,384 +101,26 @@
       </div>
     </div>
   </header>
-
-  <main id="main" class="wrap" role="main" tabindex="-1"></main>
-
-  <footer class="wrap">
-    <small>
-      © <span id="year"></span> Phil Frei — Local-First AI. 
-      <a href="#audit">Audit</a> • <a href="#terms">Terms</a>
-    </small>
-  </footer>
-
-  <!-- No-JS fallback (minimal content) -->
-  <noscript>
-    <style>
-      .hidden{display:none!important}
-      section{padding:24px 0;border-top:1px solid #2b2b2b}
-    </style>
-    <div class="wrap">
-      <h1>Phil Frei — Local-First AI</h1>
-      <p>JS disabled? Good. This still works. Local-only assets. No trackers.</p>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>GoogolPlex 2025:</strong> iOS plugin framework • 0 remote calls • patch-resilient (2 versions)</li>
-        <li><strong>PiperLing:</strong> offline speech translation • 120 ms median latency • 100% local</li>
-      </ul>
-      <p>Contact: <a href="mailto:contact@aestheticdreams.net">contact@aestheticdreams.net</a></p>
-    </div>
-  </noscript>
-
+  <main id="main" class="wrap"></main>
+  <footer class="wrap"><small>© <span id="year"></span> Phil Frei — Local-First AI</small></footer>
   <script nonce="N0NC3-LOCAL">
-    // ------- Content (single-file SPA, local only) -------
-    const pages = {
-      home: `
-        <section class="hero" style="border-top:none">
-          <div>
-            <p class="kicker">Privacy-First • Local-First • Independence Always • No Bullshit</p>
-            <h1>Phil Frei</h1>
-            <p class="sub">37, wheelchair, zero excuses. I build AI that <strong>never phones home</strong> — local, private, free. <strong>Solo builder.</strong> No lock-in. If you want leadership, not excuses — keep reading.</p>
-            <div class="chips" aria-label="Recent work">
-              <span class="chip">GoogolPlex 2025 (patch-resilient)</span>
-              <span class="chip">LAMBot-AI (intent-driven)</span>
-              <span class="chip">Cherry-Lite (offline AI)</span>
-              <span class="chip">PiperLing (speech AI)</span>
-              <span class="chip">PiperLingWebApp (UI)</span>
-              <span class="chip">Alessia (automated persona)</span>
-            </div>
-            <div class="cta">
-              <a class="btn" href="#projects">See Projects</a>
-              <a class="btn" href="#contact">Work with Me (Solo Only)</a>
-            </div>
-          </div>
-          <div>
-            <!-- Local SVG hero (no external calls) -->
-            <svg viewBox="0 0 800 520" role="img" aria-label="Aesthetic, abstract hero">
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#1a1a1a"/>
-                  <stop offset="1" stop-color="#111"/>
-                </linearGradient>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#g)"/>
-              <g>
-                <circle cx="120" cy="140" r="60" fill="#64b5f6" opacity="0.15"/>
-                <circle cx="680" cy="380" r="80" fill="#64b5f6" opacity="0.12"/>
-                <rect x="160" y="220" width="480" height="140" fill="none" stroke="#64b5f6" stroke-width="2" opacity=".3" rx="12"/>
-                <text x="50%" y="52%" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" fill="#e8e8e8">Local • Private • Proven</text>
-              </g>
-            </svg>
-          </div>
-        </section>
-      `,
-      projects: `
-        <section id="projects">
-          <h2>What I Build</h2>
-          <p class="lead">Stuff that <em>works</em> — no cloud bullshit, just real outcomes.</p>
-
-          <div class="rules-box">
-            <h3>How I Work</h3>
-            <ul>
-              <li>Solo delivery. I handle architecture, build, handover.</li>
-              <li>Local-first. No tracking, no lock-in, no cloud nonsense.</li>
-              <li>Direct comms. Async, clear. No status-meeting circus.</li>
-              <li>Scope > blabla. I say <strong>no</strong> when it’s dumb.</li>
-              <li>Project-based. No hourly billing bullshit.</li>
-              <li>Ownership. Code and docs are yours.</li>
-            </ul>
-            <p><strong>Not compatible if:</strong> You want “fast & cheap,” “privacy later,” or “OpenAI offline for free.”</p>
-          </div>
-
-          <div class="grid two" role="list">
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>GoogolPlex 2025</strong></span><span>Live & Legal</span></div>
-              <h3>iOS Plugin Framework Apple Can’t Kill</h3>
-              <ul class="meta-list">
-                <li><strong>Problem:</strong> Siri/Shortcuts automations break on iOS patches.</li>
-                <li><strong>Approach:</strong> Proxy intents + local DSL. Zero network.</li>
-                <li><strong>Architecture:</strong> iOS Shortcuts ↔ Local Host Bridge (Python).</li>
-                <li><strong>Outcome:</strong> 0 remote calls • 100% offline • survived iOS 17.6.1 & 18.0.</li>
-              </ul>
-              <p style="margin-top:.6rem"><a href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a> · <a href="https://github.com/AestheticDreamsAI/googolplex-2025" target="_blank" rel="noopener">See Proof</a></p>
-            </article>
-
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>PiperLing</strong></span><span>2024</span></div>
-              <h3>Fast Speech Translation AI</h3>
-              <ul class="meta-list">
-                <li><strong>Problem:</strong> Live speech needs low latency, zero data leak.</li>
-                <li><strong>Approach:</strong> Local pipeline (ASR → MT → TTS), no cloud.</li>
-                <li><strong>Architecture:</strong> Piper TTS • Local LLM • C# orchestrator.</li>
-                <li><strong>Outcome:</strong> 120–180 ms median per segment • 0 external hosts.</li>
-              </ul>
-              <p style="margin-top:.6rem"><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
-            </article>
-
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>LAMBot-AI</strong></span><span>In Progress</span></div>
-              <h3>Language Action Model Chatbot</h3>
-              <ul class="meta-list">
-                <li><strong>Problem:</strong> Chatbots talk. You need actions.</li>
-                <li><strong>Approach:</strong> Intent slots → deterministic actions.</li>
-                <li><strong>Architecture:</strong> ML.NET intent model • C# action bus.</li>
-                <li><strong>Outcome:</strong> 94% intent precision (test set) • 0 cloud calls.</li>
-              </ul>
-              <p style="margin-top:.6rem"><span aria-hidden="true">🔧</span> Specs & code drop soon.</p>
-            </article>
-
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>Cherry-Lite</strong></span><span>In Progress</span></div>
-              <h3>Offline AI Client</h3>
-              <ul class="meta-list">
-                <li><strong>Problem:</strong> App control without internet.</li>
-                <li><strong>Approach:</strong> Local NLU + sandboxed actions.</li>
-                <li><strong>Architecture:</strong> C# client • LAMBot core.</li>
-                <li><strong>Outcome:</strong> Goals: &lt;200 ms intent • 100% offline.</li>
-              </ul>
-            </article>
-
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>PiperLingWebApp</strong></span><span>2024</span></div>
-              <h3>Web UI for PiperLing</h3>
-              <ul class="meta-list">
-                <li><strong>Problem:</strong> Operate speech AI from phone/desktop.</li>
-                <li><strong>Approach:</strong> Lightweight local UI, no telemetry.</li>
-                <li><strong>Architecture:</strong> HTML/JS only • connects to local PiperLing.</li>
-                <li><strong>Outcome:</strong> 0 trackers • works offline (cache-first).</li>
-              </ul>
-              <p style="margin-top:.6rem"><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
-            </article>
-
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>Alessia Seelentanz</strong></span><span>Live Experiment</span></div>
-              <h3>Automated Influencer with Real Voice</h3>
-              <ul class="meta-list">
-                <li><strong>Problem:</strong> Consistency w/o spam & fakery.</li>
-                <li><strong>Approach:</strong> Persona graph + memory + style guards.</li>
-                <li><strong>Architecture:</strong> Python orchestration • local first, curated outputs.</li>
-                <li><strong>Outcome:</strong> Real engagement • 0 paid boosts.</li>
-              </ul>
-              <p style="margin-top:.6rem"><a href="https://alessia-seelentanz.de/" target="_blank" rel="noopener">Open Spec</a> · <a href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">See Proof</a></p>
-            </article>
-          </div>
-        </section>
-      `,
-      about: `
-        <section id="about">
-          <h2>About Me</h2>
-          <div class="grid two">
-            <div>
-              <p class="lead">Independence and results. Kidney transplant at 10, surgeries, a stroke. No pity. Decisions. Coding AI since 2003 — first for myself, now for people who want real outcomes.</p>
-              <p>Working as a web designer in a disability institution, “security” meant I couldn’t even upload via FTP. I broke through the firewall — not for fun, to ship work. They stopped seeing the wheelchair. They saw a solver.</p>
-              <div class="quote">“When I cut through the wall to do my job, excuses died. Results stayed.”</div>
-              <p>Your data’s yours. My tech runs local, uses legit APIs, no trackers. Privacy matters — but I don’t worship fear; I design out the leak.</p>
-              <p><strong>Today:</strong> I ship tools for those who want control. No fluff, no excuses, just my rules.</p>
-              <p class="lead" style="margin-top:10px"><strong>Tech:</strong> C#, Python, JavaScript • ML.NET, local LLMs • Piper TTS • iOS Shortcuts • Home Assistant</p>
-            </div>
-            <div>
-              <h3>Timeline (1997–2025)</h3>
-              <div class="timeline" aria-label="Career timeline">
-                <div class="t"><strong>1997 (10)</strong> Kidney transplant. Second shot.</div>
-                <div class="t"><strong>2003–2008</strong> Pattern recognition prototypes. Hip surgery → pain → focus.</div>
-                <div class="t"><strong>2009–2015</strong> C# & automation. Stroke → kept going.</div>
-                <div class="t"><strong>2016–2020</strong> Voice interfaces, fitness over 20 years of physio.</div>
-                <div class="t"><strong>2021–2022</strong> Modern ML frameworks, local AI experiments.</div>
-                <div class="t"><strong>2023–2024</strong> 109-day detox, mindful masculinity, standards over niceness.</div>
-                <div class="t"><strong>2025</strong> GoogolPlex 2025 shipped. Alessia launched.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      `,
-      stories: `
-        <section id="stories">
-          <h2>My Stories</h2>
-          <p class="lead">Life tried to break me. I told it to fuck off and kept building.</p>
-          <div class="grid two" role="list">
-            <article class="card" role="listitem">
-              <h3>Never Give Up</h3>
-              <p>At 10, my kidneys failed. Doctors called me a lost cause. My dad’s donation and my stubborn spine proved them wrong.</p>
-              <p class="quote">“Fear is noise. Cut through.”</p>
-            </article>
-            <article class="card" role="listitem">
-              <h3>Prove Them Wrong</h3>
-              <p>They said my wheelchair defined me. I learned code, music, design — and built what they couldn’t see.</p>
-              <p class="quote">“I’m not their label.”</p>
-            </article>
-            <article class="card" role="listitem">
-              <h3>Pain into Power</h3>
-              <p>Hip surgery hurt. I moved anyway. Action beats whining, every time.</p>
-              <p class="quote">“Start now. Win later.”</p>
-            </article>
-          </div>
-        </section>
-      `,
-      independence: `
-        <section id="independence">
-          <h2>Why Independence?</h2>
-          <p class="lead">Screw clouds. Own your data. My AI gives you control — no Big Tech, no trackers, no bullshit.</p>
-          <div class="grid two">
-            <div>
-              <p><strong>Threat model:</strong> Data exfiltration via SDKs, silent API drift, policy killswitches, model logging. Counter: <em>local pipelines</em>, explicit offline, signed builds.</p>
-              <p><strong>Principles:</strong> Minimize surface • No third-party calls • Reproducible builds • Transparent CSP.</p>
-              <div class="rules-box">
-                <h3>Data Flow (Local-Only)</h3>
-                <ul>
-                  <li>Inputs → Local processing (LLM/ASR/TTS) → Outputs</li>
-                  <li>Zero remote hosts • No analytics • No pixel</li>
-                  <li>Audit with DevTools: Network = <code>self</code> only</li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <h3>Cloud vs. Local-First</h3>
-              <div class="card">
-                <ul class="meta-list">
-                  <li>Latency: Cloud 150–800 ms vs. Local 60–200 ms</li>
-                  <li>Failures: API changes vs. Stable binaries</li>
-                  <li>Privacy: Server logs vs. No upload</li>
-                  <li>Cost: Per-token fees vs. Fixed hardware</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      `,
-      contact: `
-        <section id="contact">
-          <h2>Contact</h2>
-          <p class="lead">Want AI that doesn’t suck? Send me:</p>
-          <div class="rules-box">
-            <ul>
-              <li>Problem & goal (2–3 sentences)</li>
-              <li>Context/constraints</li>
-              <li>Budget range & timeline</li>
-              <li>Decision-maker: Yes/No</li>
-            </ul>
-            <p><strong>Note:</strong> I reply only if we’re a fit. No “fast & cheap” or “privacy later.”</p>
-          </div>
-          <div class="cta">
-            <a class="btn" href="mailto:contact@aestheticdreams.net">Request Scope</a>
-            <a class="btn" href="https://github.com/AestheticDreamsAI" target="_blank" rel="noopener">See Proof</a>
-            <a class="btn" href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a>
-            <a class="btn" href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">Alessia IG</a>
-          </div>
-        </section>
-      `,
-      audit: `
-        <section id="audit">
-          <h2>Audit</h2>
-          <p class="lead">This site is local-only. No external requests by design.</p>
-          <div class="card">
-            <ul class="meta-list">
-              <li><strong>Hosts:</strong> <code>self</code> only</li>
-              <li><strong>CSP:</strong> <code>default-src 'self'; img-src 'self' data:; script-src 'self' 'nonce-N0NC3-LOCAL'; style-src 'self';</code></li>
-              <li><strong>Telemetry:</strong> 0</li>
-              <li><strong>Fonts:</strong> System stack</li>
-            </ul>
-          </div>
-          <p style="margin-top:.6rem">To verify: Open DevTools → Network → Reload. You should see <em>only</em> requests to <code>self</code>.</p>
-        </section>
-      `,
-      terms: `
-        <section id="terms">
-          <h2>Terms</h2>
-          <div class="rules-box">
-            <ul>
-              <li><strong>Engagement:</strong> Project-based. No hourly.</li>
-              <li><strong>Privacy:</strong> Local-first or no deal.</li>
-              <li><strong>Ownership:</strong> You own code & docs. I keep portfolio rights (redacted).</li>
-              <li><strong>Meetings:</strong> Async by default. Calls when needed.</li>
-              <li><strong>Payment:</strong> 50/50 milestones. No net-60 games.</li>
-            </ul>
-          </div>
-        </section>
-      `
+    const pages={
+      home:`<section class="hero"><div><p class="kicker">Privacy-First • Local-First • Independence</p><h1>Phil Frei</h1><p class="sub">37, wheelchair. I build AI that never phones home — local, private, free.</p><div class="chips"><span class="chip">GoogolPlex 2025</span><span class="chip">LAMBot-AI</span><span class="chip">Cherry-Lite</span><span class="chip">PiperLing</span><span class="chip">Alessia</span></div><div class="cta"><a class="btn" href="#projects">See Projects</a><a class="btn" href="#contact">Work with Me</a></div></div></section>`,
+      projects:`<section id="projects"><h2>Projects</h2><p class="lead">Local-first, privacy-first, real outcomes.</p></section>`,
+      about:`<section id="about"><h2>About Me</h2><p class="lead">Independence and results. Kidney transplant, surgeries, stroke. Coding AI since 2003.</p></section>`,
+      stories:`<section id="stories"><h2>Stories</h2><p class="lead">Life tried to break me. I kept building.</p></section>`,
+      independence:`<section id="independence"><h2>Why Independence?</h2><p class="lead">Screw clouds. Own your data. My AI gives you control.</p></section>`,
+      contact:`<section id="contact"><h2>Contact</h2><p class="lead">Want AI that doesn’t suck? Email me.</p><div class="cta"><a class="btn" href="mailto:contact@aestheticdreams.net">Contact</a></div></section>`
     };
-
-    // ------- Router -------
-    const navLinks = Array.from(document.querySelectorAll('.nav-links a, .sheet a'));
-    const main = document.getElementById('main');
-
-    function setActiveLink(hash){
-      navLinks.forEach(a=>{
-        const isActive=a.getAttribute('href')===hash;
-        a.classList.toggle('active',isActive);
-        if(isActive) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
-      });
-    }
-
-    function loadPage(hash){
-      const page = (hash||'#home').slice(1);
-      main.innerHTML = pages[page] || pages.home;
-      setActiveLink(`#${page}`);
-      window.scrollTo(0,0);
-      main.focus();
-    }
-
-    // ------- Mobile menu: ESC, focus trap, inert background -------
-    const btn = document.getElementById('menuBtn');
-    const mobile = document.getElementById('mobileMenu');
-    const sheet = mobile.querySelector('.sheet');
-    const headerNav = document.querySelector('header .nav');
-
-    function focusables(root){
-      return Array.from(root.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])'))
-        .filter(el=>!el.hasAttribute('disabled') && el.offsetParent!==null);
-    }
-
-    function openMenu(){
-      mobile.classList.remove('hidden');
-      btn.setAttribute('aria-expanded','true');
-      // inert background
-      headerNav.setAttribute('aria-hidden','true');
-      document.getElementById('main').inert = true;
-      document.querySelector('footer').inert = true;
-      // focus trap
-      const els = focusables(sheet);
-      const first = els[0], last = els[els.length-1];
-      first?.focus();
-      function trap(e){
-        if(e.key==='Escape'){ closeMenu(); return; }
-        if(e.key!=='Tab') return;
-        if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
-        else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
-      }
-      mobile._trap = trap;
-      mobile.addEventListener('keydown', trap);
-    }
-
-    function closeMenu(){
-      mobile.classList.add('hidden');
-      btn.setAttribute('aria-expanded','false');
-      headerNav.removeAttribute('aria-hidden');
-      document.getElementById('main').inert = false;
-      document.querySelector('footer').inert = false;
-      if(mobile._trap){ mobile.removeEventListener('keydown', mobile._trap); mobile._trap=null; }
-      btn.focus();
-    }
-
-    btn.addEventListener('click', ()=> mobile.classList.contains('hidden') ? openMenu() : closeMenu());
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !mobile.classList.contains('hidden')) closeMenu(); });
-    mobile.addEventListener('click', e=>{ if(e.target===mobile) closeMenu(); });
-    sheet.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> closeMenu()));
-
-    // ------- Link handling -------
-    navLinks.forEach(link=>{
-      link.addEventListener('click', e=>{
-        e.preventDefault();
-        const hash = link.getAttribute('href');
-        history.pushState(null,null,hash);
-        loadPage(hash);
-      });
-    });
-
-    // ------- Footer year -------
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ------- Initial load / history navigation -------
-    window.addEventListener('load', ()=> loadPage(location.hash || '#home'));
-    window.addEventListener('popstate', ()=> loadPage(location.hash || '#home'));
+    const navLinks=document.querySelectorAll('.nav-links a,.sheet a'),main=document.getElementById('main');
+    function setActive(hash){navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')===hash)})}
+    function loadPage(hash){const page=(hash||'#home').slice(1);main.innerHTML=pages[page]||pages.home;setActive(`#${page}`);window.scrollTo(0,0)}
+    navLinks.forEach(l=>l.addEventListener('click',e=>{e.preventDefault();const h=l.getAttribute('href');history.pushState(null,null,h);loadPage(h)}))
+    const btn=document.getElementById('menuBtn'),mobile=document.getElementById('mobileMenu');
+    btn.addEventListener('click',()=>mobile.classList.toggle('hidden'))
+    document.getElementById('year').textContent=new Date().getFullYear()
+    window.addEventListener('load',()=>loadPage(location.hash||'#home'))
+    window.addEventListener('popstate',()=>loadPage(location.hash||'#home'))
   </script>
 </body>
 </html>
