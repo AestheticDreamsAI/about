@@ -26,7 +26,7 @@
     }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    img { max-width: 100%; height: auto; border-radius: 8px; } /* Weniger Rundungen */
+    img { max-width: 100%; height: auto; border-radius: 8px; }
 
     /* Shell */
     .wrap { max-width: 1120px; margin: 0 auto; padding: 20px; }
@@ -66,7 +66,7 @@
     .nav-links a {
       color: var(--muted);
       padding: 10px 12px;
-      border-radius: 6px; /* Weniger Rundungen */
+      border-radius: 6px;
       border: 1px solid transparent;
     }
     .nav-links a[aria-current="page"],
@@ -81,7 +81,7 @@
       gap: 4px;
       padding: 10px;
       border: 1px solid var(--line);
-      border-radius: 6px; /* Weniger Rundungen */
+      border-radius: 6px;
       background: var(--panel2);
       cursor: pointer;
     }
@@ -127,7 +127,7 @@
     }
     .sheet a {
       padding: 12px 10px;
-      border-radius: 6px; /* Weniger Rundungen */
+      border-radius: 6px;
       color: #dfe9ff;
       border: 1px solid transparent;
     }
@@ -185,7 +185,7 @@
       align-items: center;
       gap: 8px;
       padding: 10px 14px;
-      border-radius: 6px; /* Weniger Rundungen */
+      border-radius: 6px;
       border: 1px solid var(--line);
       background: var(--panel2);
       font-weight: 600;
@@ -222,7 +222,7 @@
     .card {
       background: var(--panel2);
       border: 1px solid var(--line);
-      border-radius: 8px; /* Weniger Rundungen */
+      border-radius: 8px;
       padding: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
@@ -277,7 +277,7 @@
       border-left: 4px solid var(--brand);
       background: var(--panel2);
       padding: 16px;
-      border-radius: 8px; /* Weniger Rundungen */
+      border-radius: 8px;
       margin: 14px 0;
       color: #cfe6ff;
       font-style: italic;
@@ -369,8 +369,11 @@
             <p class="sub">37, wheelchair, zero fucks given. I build AI that <strong>doesn’t screw you</strong> — local, private, free. <strong>Solo builder.</strong> No babysitting. No lock-in. If you want leadership, not excuses — keep reading.</p>
             <div class="chips">
               <span class="chip">GoogolPlex 2025 (legal & patch-proof)</span>
-              <span class="chip">Automated Influencers</span>
-              <span class="chip">Voice & Home Assistant</span>
+              <span class="chip">LAMBot-AI (intent-driven)</span>
+              <span class="chip">Cherry-Lite (offline AI)</span>
+              <span class="chip">PiperLing (speech AI)</span>
+              <span class="chip">PiperLingWebApp (UI)</span>
+              <span class="chip">Alessia (automated persona)</span>
             </div>
             <div class="cta">
               <a class="btn" href="#projects">See Projects</a>
@@ -402,30 +405,44 @@
             <article class="card" role="listitem">
               <div class="meta"><span><strong>GoogolPlex 2025</strong></span><span>Live & Legal</span></div>
               <h3>iOS Plugin Framework Apple Can’t Kill</h3>
-              <p><strong>Outcome:</strong> Extend iOS legally, patch-proof.</p>
-              <p>Official Shortcuts + Safari Redirects. No shady hacks. Python plugins, 100% local, slick glass UI.</p>
+              <p><strong>Outcome:</strong> Patch-proof iOS extension, privacy-first control.</p>
+              <p>A patch-proof, local Siri plugin framework for iOS — inspired by the GoogolPlex (Betterthansiri.com) hack (2014), but open, extensible and privacy-first. <strong>Built with:</strong> Python</p>
               <p><a href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a> · <a href="https://github.com/AestheticDreamsAI/googolplex-2025" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>LAMBot-AI</strong></span><span>In Progress</span></div>
+              <h3>Language Action Model Chatbot</h3>
+              <p><strong>Outcome:</strong> Fast intent recognition, app automation.</p>
+              <p>A simple Language Action Model (LAM) chatbot built with C# and ML.NET that recognizes user intents and executes specific actions such as launching applications. <strong>Built with:</strong> C#</p>
+              <p><a href="#" target="_blank" rel="noopener">Open Spec</a> · <a href="#" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>Cherry-Lite</strong></span><span>In Progress</span></div>
+              <h3>Offline AI Client</h3>
+              <p><strong>Outcome:</strong> Offline AI for app control, no internet needed.</p>
+              <p>Cherry-Lite is a simple offline AI client based on the LAMBot-AI framework. It recognizes user intents and performs actions like launching applications using machine learning and NLP. <strong>Built with:</strong> C#</p>
+              <p><a href="#" target="_blank" rel="noopener">Open Spec</a> · <a href="#" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>PiperLing</strong></span><span>2024</span></div>
+              <h3>Fast Speech Translation AI</h3>
+              <p><strong>Outcome:</strong> Offline real-time translation pipelines.</p>
+              <p>PiperLing is a powerful open-source interpreter AI based on Piper TTS, Ollama or GPT4o, and C#. Designed to provide simple and fast speech translation and synthesis. <strong>Built with:</strong> C#</p>
+              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
+            </article>
+            <article class="card" role="listitem">
+              <div class="meta"><span><strong>PiperLingWebApp</strong></span><span>2024</span></div>
+              <h3>Web UI for PiperLing</h3>
+              <p><strong>Outcome:</strong> Lightweight web interface for speech AI.</p>
+              <p>Simple Web UI for use as a Desktop or Smartphone app with PiperLing. <strong>Built with:</strong> HTML/JavaScript</p>
+              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
             </article>
             <article class="card" role="listitem">
               <div class="meta"><span><strong>Alessia Seelentanz</strong></span><span>Live Experiment</span></div>
               <h3>Automated Influencer with Real Voice</h3>
               <p><strong>Outcome:</strong> Consistent persona, zero spam, real engagement.</p>
-              <p>German-speaking lifestyle persona. Writes her own posts, stays real, interacts like a human.</p>
+              <p>German-speaking lifestyle persona. Writes her own posts, stays real, interacts like a human. <strong>Experimental:</strong> Possesses emotional intelligence, long-term memory, learns from the past and evolves automatically. <strong>Built with:</strong> Python, HTML/Javascript</p>
               <p><a href="https://alessia-seelentanz.de/" target="_blank" rel="noopener">Open Spec</a> · <a href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">See Proof</a></p>
-            </article>
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>Luxa Voice Suite</strong></span><span>Feb 2025</span></div>
-              <h3>Home Assistant That Doesn’t Spy</h3>
-              <p><strong>Outcome:</strong> Private, low-latency voice control at home.</p>
-              <p>Python voice pipeline with Ollama. Fully local, your smart home stays your business.</p>
-              <p><a href="https://github.com/AestheticDreamsAI/Luxa" target="_blank" rel="noopener">See Proof</a></p>
-            </article>
-            <article class="card" role="listitem">
-              <div class="meta"><span><strong>PiperLing</strong></span><span>2024</span></div>
-              <h3>Fast Speech Translation</h3>
-              <p><strong>Outcome:</strong> Offline real-time translation pipelines.</p>
-              <p>Piper TTS + Ollama with a no-frills web UI. Built for speed and stability.</p>
-              <p><a href="https://github.com/AestheticDreamsAI/PiperLing" target="_blank" rel="noopener">See Proof</a></p>
             </article>
           </div>
         </section>
@@ -500,7 +517,7 @@
             <p><strong>Note:</strong> I reply only if we’re a fit. No "fast & cheap" or "privacy later."</p>
           </div>
           <div class="cta">
-            <a class="btn" href="mailto:contact@aestheticdreams.net">Request Scope</a>
+            <a class="btn" href="mailto:info@rollolappenbruch.ch">Request Scope</a>
             <a class="btn" href="https://github.com/AestheticDreamsAI" target="_blank" rel="noopener">See Proof</a>
             <a class="btn" href="https://gplex.dev" target="_blank" rel="noopener">Open Spec</a>
             <a class="btn" href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener">Alessia IG</a>
