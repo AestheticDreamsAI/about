@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -16,24 +17,24 @@
   <meta property="og:image" content="/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    img-src 'self' data:;
-    font-src 'self';
-    script-src 'self' 'nonce-N0NC3-LOCAL';
-    style-src 'self';
-    connect-src 'self';
-    base-uri 'none';
-    form-action 'self';
-    frame-ancestors 'none';
-  ">
+<meta http-equiv="Content-Security-Policy" content="
+default-src 'self';
+img-src 'self' data:;
+font-src 'self';
+script-src 'self' 'nonce-N0NC3-LOCAL';
+style-src 'self';
+connect-src 'self';
+base-uri 'none';
+form-action 'self';
+frame-ancestors 'none';
+">
 
   <style>
     :root{--bg:#0f0f0f;--panel:#121212;--panel2:#1a1a1a;--text:#e8e8e8;--muted:#a8a8a8;--brand:#64b5f6;--line:#2b2b2b;--ok:#7ee787}
     *{box-sizing:border-box}
     html,body{margin:0}
     body{font-family:system-ui, sans-serif;background:var(--bg);color:var(--text)}
-    a{color:var(--brand);text-decoration:none}
+    a{color:var(--brand);text-decoration:none;cursor:pointer}
     a:hover{text-decoration:underline}
     img{max-width:100%;height:auto;border-radius:8px}
     .wrap{max-width:1120px;margin:0 auto;padding:20px}
@@ -47,9 +48,9 @@
     .nav-links{display:none;gap:14px}
     .nav-links a{color:var(--muted);padding:10px 12px;border-radius:6px}
     .nav-links a.active{color:var(--brand);background:var(--panel2);border:1px solid var(--line)}
-    .hamburger{display:inline-flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}
+    .hamburger{display:inline-flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--panel2);cursor:pointer}
     .hamburger span{display:block;width:22px;height:2px;background:#cfcfcf}
-    .mobile{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.3s}
+    .mobile{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.3s;z-index:50}
     .mobile:not(.hidden){opacity:1;visibility:visible}
     .sheet{position:absolute;right:0;top:0;height:100%;width:min(86%,360px);background:var(--panel2);border-left:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:.3s}
     .mobile:not(.hidden) .sheet{transform:translateX(0)}
@@ -62,18 +63,21 @@
     .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
     .chip{border:1px solid var(--line);background:var(--panel2);color:#cfe6ff;padding:6px 10px;border-radius:999px;font-size:.85rem}
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);font-weight:600}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);font-weight:600;transition:border-color 0.3s}
     .btn:hover{border-color:var(--brand)}
     section{padding:44px 0;border-top:1px solid var(--line)}
+    section:first-child{border-top:none}
     h2{font-size:1.6rem;margin:0 0 12px}
-    .lead{color:#cfcfcf}
+    .lead{color:#cfcfcf;font-size:1.1rem;line-height:1.6;margin-bottom:20px}
     .grid{display:grid;gap:16px}
     @media(min-width:720px){.grid.two{grid-template-columns:repeat(2,1fr)}}
-    .card{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .card{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .card h3{margin-top:0;color:var(--brand)}
     .meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem}
-    footer{padding:36px 0;color:var(--muted)}
+    footer{padding:36px 0;color:var(--muted);border-top:1px solid var(--line)}
     @media(min-width:880px){.nav-links{display:flex}.hamburger{display:none}.hero{grid-template-columns:1.1fr .9fr}}
   </style>
+
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -105,22 +109,167 @@
   <footer class="wrap"><small>© <span id="year"></span> Phil Frei — Local-First AI</small></footer>
   <script nonce="N0NC3-LOCAL">
     const pages={
-      home:`<section class="hero"><div><p class="kicker">Privacy-First • Local-First • Independence</p><h1>Phil Frei</h1><p class="sub">37, wheelchair. I build AI that never phones home — local, private, free.</p><div class="chips"><span class="chip">GoogolPlex 2025</span><span class="chip">LAMBot-AI</span><span class="chip">Cherry-Lite</span><span class="chip">PiperLing</span><span class="chip">Alessia</span></div><div class="cta"><a class="btn" href="#projects">See Projects</a><a class="btn" href="#contact">Work with Me</a></div></div></section>`,
-      projects:`<section id="projects"><h2>Projects</h2><p class="lead">Local-first, privacy-first, real outcomes.</p></section>`,
-      about:`<section id="about"><h2>About Me</h2><p class="lead">Independence and results. Kidney transplant, surgeries, stroke. Coding AI since 2003.</p></section>`,
-      stories:`<section id="stories"><h2>Stories</h2><p class="lead">Life tried to break me. I kept building.</p></section>`,
-      independence:`<section id="independence"><h2>Why Independence?</h2><p class="lead">Screw clouds. Own your data. My AI gives you control.</p></section>`,
-      contact:`<section id="contact"><h2>Contact</h2><p class="lead">Want AI that doesn’t suck? Email me.</p><div class="cta"><a class="btn" href="mailto:contact@aestheticdreams.net">Contact</a></div></section>`
+      home:`<section class="hero">
+        <div>
+          <p class="kicker">Privacy-First • Local-First • Independence</p>
+          <h1>Phil Frei</h1>
+          <p class="sub">37, wheelchair. I build AI that never phones home — local, private, free.</p>
+          <div class="chips">
+            <span class="chip">GoogolPlex 2025</span>
+            <span class="chip">LAMBot-AI</span>
+            <span class="chip">Cherry-Lite</span>
+            <span class="chip">PiperLing</span>
+            <span class="chip">Alessia</span>
+          </div>
+          <div class="cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" href="#contact">Work with Me</a>
+          </div>
+        </div>
+      </section>`,
+      projects:`<section id="projects">
+        <h2>Projects</h2>
+        <p class="lead">Local-first, privacy-first, real outcomes.</p>
+        <div class="grid two">
+          <div class="card">
+            <h3>GoogolPlex 2025</h3>
+            <p>Advanced AI processing engine designed for maximum privacy and local computation. No data ever leaves your device.</p>
+            <div class="meta"><span>Status: Active</span><span>Local-First</span></div>
+          </div>
+          <div class="card">
+            <h3>LAMBot-AI</h3>
+            <p>Intelligent automation assistant that runs entirely on your hardware. Privacy-focused, efficient, and powerful.</p>
+            <div class="meta"><span>Status: Beta</span><span>Privacy-First</span></div>
+          </div>
+          <div class="card">
+            <h3>Cherry-Lite</h3>
+            <p>Lightweight AI framework optimized for accessibility and ease of use. Works great on older hardware.</p>
+            <div class="meta"><span>Status: Released</span><span>Open Source</span></div>
+          </div>
+          <div class="card">
+            <h3>PiperLing</h3>
+            <p>Natural language processing tools that respect your privacy. All computation happens locally on your machine.</p>
+            <div class="meta"><span>Status: Development</span><span>Zero-Tracking</span></div>
+          </div>
+        </div>
+      </section>`,
+      about:`<section id="about">
+        <h2>About Me</h2>
+        <p class="lead">Independence and results. Kidney transplant, surgeries, stroke. Coding AI since 2003.</p>
+        <div class="card">
+          <p>Life threw everything at me - health challenges, setbacks, moments when giving up seemed easier. But here's what I learned: true strength isn't about avoiding the fall, it's about getting back up and building something better.</p>
+          <p>I've been working with AI since 2003, long before it became the buzzword it is today. Through kidney transplants, multiple surgeries, and a stroke, I kept coding because I believe in technology that serves people, not corporations.</p>
+          <p>My disability gives me a unique perspective on accessibility and user-centered design. Every project I build is tested for real-world usability because I live in that real world every day.</p>
+          <p>Independence isn't just my philosophy - it's my survival strategy. When you can't rely on systems built by others, you learn to build your own. That's why all my AI runs locally, respects privacy, and puts control back in your hands.</p>
+        </div>
+      </section>`,
+      stories:`<section id="stories">
+        <h2>Stories</h2>
+        <p class="lead">Life tried to break me. I kept building.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>The Kidney Transplant</h3>
+            <p>2019 was supposed to be my breakthrough year. Instead, I spent it in hospitals, on dialysis, fighting for a transplant. But even with tubes in my arm, I was coding on my laptop in the hospital bed.</p>
+            <p>That experience taught me something crucial: when your body fails you, your mind becomes your superpower. Every line of code was an act of defiance against the circumstances trying to stop me.</p>
+          </div>
+          <div class="card">
+            <h3>Coding Through Recovery</h3>
+            <p>Post-surgery recovery is brutal. Pain medication clouds your thinking, but I found that coding actually helped. It gave me focus, purpose, something to build when everything else was falling apart.</p>
+            <p>Some of my best algorithmic breakthroughs came during those long nights when sleep was impossible. Pain became fuel. Limitation became innovation.</p>
+          </div>
+          <div class="card">
+            <h3>The Stroke</h3>
+            <p>Just when I thought I'd overcome the biggest challenge, life dealt another blow. The stroke affected my motor skills but not my determination. I had to relearn how to type efficiently, but I never stopped creating.</p>
+            <p>That setback led to my focus on accessibility-first design. When you've experienced limitations firsthand, you build technology that works for everyone, not just the privileged few.</p>
+          </div>
+        </div>
+      </section>`,
+      independence:`<section id="independence">
+        <h2>Why Independence?</h2>
+        <p class="lead">Screw clouds. Own your data. My AI gives you control.</p>
+        <div class="card">
+          <h3>The Problem with Big Tech AI</h3>
+          <p>Every major AI service today is designed to extract value from you. Your data goes to their servers, gets analyzed by their algorithms, and feeds their business model. You're not the customer - you're the product.</p>
+          <p>Cloud-based AI means your private thoughts, documents, and conversations are processed on someone else's computer. That's not intelligence - that's surveillance capitalism with a friendly interface.</p>
+        </div>
+        <div class="card">
+          <h3>Local-First Changes Everything</h3>
+          <p>When AI runs on your hardware, you control everything. Your data never leaves your device. No terms of service can suddenly change your access. No internet outage kills your workflow. No company can decide to shut down your tools.</p>
+          <p>Local-first AI means true digital independence. It's not just about privacy - it's about sovereignty over your digital life.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy is a Human Right</h3>
+          <p>I didn't survive medical crises and personal setbacks just to hand my digital life over to Silicon Valley. Privacy isn't paranoia - it's self-respect.</p>
+          <p>Every project I build starts with one question: "How can this work without compromising the user's autonomy?" The answer is always local-first, privacy-first, user-first.</p>
+        </div>
+      </section>`,
+      contact:`<section id="contact">
+        <h2>Contact</h2>
+        <p class="lead">Want AI that doesn't suck? Email me.</p>
+        <div class="card">
+          <p>I work with individuals and organizations who value privacy, independence, and results. Whether you need custom AI solutions, consulting on local-first architecture, or just want to discuss the future of privacy-respecting technology.</p>
+          <p>No sales teams, no account managers, no bureaucracy. Just direct communication with the person who builds the solutions.</p>
+          <div class="cta">
+            <a class="btn" href="mailto:contact@aestheticdreams.net">Email Me Directly</a>
+          </div>
+          <p><small>Response time: Usually within 24 hours. I read every email personally.</small></p>
+        </div>
+      </section>`
     };
-    const navLinks=document.querySelectorAll('.nav-links a,.sheet a'),main=document.getElementById('main');
-    function setActive(hash){navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')===hash)})}
-    function loadPage(hash){const page=(hash||'#home').slice(1);main.innerHTML=pages[page]||pages.home;setActive(`#${page}`);window.scrollTo(0,0)}
-    navLinks.forEach(l=>l.addEventListener('click',e=>{e.preventDefault();const h=l.getAttribute('href');history.pushState(null,null,h);loadPage(h)}))
-    const btn=document.getElementById('menuBtn'),mobile=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>mobile.classList.toggle('hidden'))
-    document.getElementById('year').textContent=new Date().getFullYear()
-    window.addEventListener('load',()=>loadPage(location.hash||'#home'))
-    window.addEventListener('popstate',()=>loadPage(location.hash||'#home'))
+
+```
+const navLinks=document.querySelectorAll('.nav-links a,.sheet a');
+const main=document.getElementById('main');
+const btn=document.getElementById('menuBtn');
+const mobile=document.getElementById('mobileMenu');
+
+function setActive(hash){
+  navLinks.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')===hash)
+  });
+}
+
+function loadPage(hash){
+  const page=(hash||'#home').slice(1);
+  main.innerHTML=pages[page]||pages.home;
+  setActive(`#${page}`);
+  window.scrollTo(0,0);
+  mobile.classList.add('hidden');
+}
+
+function handleNavClick(e) {
+  e.preventDefault();
+  const hash = e.target.getAttribute('href');
+  history.pushState(null, null, hash);
+  loadPage(hash);
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', handleNavClick);
+});
+
+btn.addEventListener('click', () => {
+  mobile.classList.toggle('hidden');
+});
+
+mobile.addEventListener('click', (e) => {
+  if (e.target === mobile) {
+    mobile.classList.add('hidden');
+  }
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+window.addEventListener('load', () => loadPage(location.hash || '#home'));
+window.addEventListener('popstate', () => loadPage(location.hash || '#home'));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !mobile.classList.contains('hidden')) {
+    mobile.classList.add('hidden');
+  }
+});
+```
+
   </script>
 </body>
 </html>
