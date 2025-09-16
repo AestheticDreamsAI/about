@@ -465,6 +465,7 @@
             <div class="logo">Phil Frei</div>
             <ul class="nav-links" id="navLinks">
                 <li><a class="nav-link active" data-page="home">Home</a></li>
+                <li><a class="nav-link" data-page="about">About</a></li>
                 <li><a class="nav-link" data-page="projects">Projects</a></li>
                 <li><a class="nav-link" data-page="process">Process</a></li>
                 <li><a class="nav-link" data-page="stories">Stories</a></li>
@@ -709,208 +710,486 @@
             </div>
         </div>
     </main>
+<script>
+// Project data
+const projects = [
+    {
+        title: "GoogolPlex 2025",
+        subtitle: "iOS Plugin Framework Apple Can't Kill",
+        status: "Live",
+        statusClass: "live",
+        outcome: "Patch-proof iOS extension with full control.",
+        description: "A completely independent Siri plugin framework for iOS, inspired by the original GoogolPlex hack but built to be unbreakable. No cloud dependency, no corporate oversight.",
+        tech: ["Python", "iOS", "Reverse Engineering"],
+        links: [
+            { label: "Live Demo", url: "https://gplex.dev", working: true },
+            { label: "Source", url: "https://github.com/AestheticDreamsAI/googolplex-2025", working: true }
+        ]
+    },
+    {
+        title: "LAMBot-AI",
+        subtitle: "Language Action Model That Works",
+        status: "Development",
+        statusClass: "development",
+        outcome: "Lightning-fast intent recognition with real automation.",
+        description: "A practical Language Action Model built with C# and ML.NET. Recognizes what users want and actually does it – launches apps, controls systems, gets stuff done.",
+        tech: ["C#", "ML.NET", "NLP"],
+        links: [
+            { label: "Docs", url: "#", working: false },
+            { label: "Early Access", url: "#", working: false }
+        ]
+    },
+    {
+        title: "Cherry-Lite",
+        subtitle: "Offline AI That Respects Privacy",
+        status: "Development",
+        statusClass: "development",
+        outcome: "Complete AI assistant with zero cloud dependency.",
+        description: "Privacy-first AI client based on LAMBot framework. Everything runs locally, nothing leaves your machine. Real AI control without corporate surveillance.",
+        tech: ["C#", "Local AI", "Privacy"],
+        links: [
+            { label: "Preview", url: "#", working: false },
+            { label: "Docs", url: "#", working: false }
+        ]
+    },
+    {
+        title: "PiperLing",
+        subtitle: "Real-Time Speech Translation",
+        status: "Complete",
+        statusClass: "complete",
+        outcome: "Independent translation pipelines that work in real-time.",
+        description: "Open-source interpreter AI using Piper TTS and cutting-edge models. Fast, accurate, completely independent. No API keys, no rate limits.",
+        tech: ["C#", "Piper TTS", "Speech AI"],
+        links: [
+            { label: "Download", url: "https://github.com/AestheticDreamsAI/PiperLing", working: true },
+            { label: "Docs", url: "https://github.com/AestheticDreamsAI/PiperLing#readme", working: true }
+        ]
+    },
+    {
+        title: "Alessia Seelentanz",
+        subtitle: "AI Influencer with Real Personality",
+        status: "Live",
+        statusClass: "live",
+        outcome: "Consistent persona, real engagement, zero management.",
+        description: "German lifestyle AI that writes her own content, maintains consistent personality, and builds genuine connections. Experimental emotional intelligence with long-term memory.",
+        tech: ["Python", "Personality AI", "Social"],
+        links: [
+            { label: "Meet Alessia", url: "https://www.instagram.com/alessiaseelentanz/", working: true },
+            { label: "Technical", url: "https://alessia-seelentanz.de/", working: true }
+        ]
+    },
+    {
+        title: "Your Project",
+        subtitle: "Whatever Needs Building",
+        status: "Available",
+        statusClass: "development",
+        outcome: "Whatever you need built – the right way.",
+        description: "Got a problem that needs solving? A project stuck in committee hell? Something that needs to actually work? Let's build it together.",
+        tech: ["Your Choice", "Best Practices", "Results"],
+        links: [
+            { label: "Start", url: "mailto:Contact@aestheticdreams.net", working: true },
+            { label: "Process", url: "#", working: true }
+        ]
+    }
+];
 
-    <script>
-        // Project data
-        const projects = [
-            {
-                title: "GoogolPlex 2025",
-                subtitle: "iOS Plugin Framework Apple Can't Kill",
-                status: "Live",
-                statusClass: "live",
-                outcome: "Patch-proof iOS extension with full control.",
-                description: "A completely independent Siri plugin framework for iOS, inspired by the original GoogolPlex hack but built to be unbreakable. No cloud dependency, no corporate oversight.",
-                tech: ["Python", "iOS", "Reverse Engineering"],
-                links: [
-                    { label: "Live Demo", url: "https://gplex.dev", working: true },
-                    { label: "Source", url: "https://github.com/AestheticDreamsAI/googolplex-2025", working: true }
-                ]
-            },
-            {
-                title: "LAMBot-AI",
-                subtitle: "Language Action Model That Works",
-                status: "Development",
-                statusClass: "development",
-                outcome: "Lightning-fast intent recognition with real automation.",
-                description: "A practical Language Action Model built with C# and ML.NET. Recognizes what users want and actually does it – launches apps, controls systems, gets stuff done.",
-                tech: ["C#", "ML.NET", "NLP"],
-                links: [
-                    { label: "Docs", url: "#", working: false },
-                    { label: "Early Access", url: "#", working: false }
-                ]
-            },
-            {
-                title: "Cherry-Lite",
-                subtitle: "Offline AI That Respects Privacy",
-                status: "Development",
-                statusClass: "development",
-                outcome: "Complete AI assistant with zero cloud dependency.",
-                description: "Privacy-first AI client based on LAMBot framework. Everything runs locally, nothing leaves your machine. Real AI control without corporate surveillance.",
-                tech: ["C#", "Local AI", "Privacy"],
-                links: [
-                    { label: "Preview", url: "#", working: false },
-                    { label: "Docs", url: "#", working: false }
-                ]
-            },
-            {
-                title: "PiperLing",
-                subtitle: "Real-Time Speech Translation",
-                status: "Complete",
-                statusClass: "complete",
-                outcome: "Independent translation pipelines that work in real-time.",
-                description: "Open-source interpreter AI using Piper TTS and cutting-edge models. Fast, accurate, completely independent. No API keys, no rate limits.",
-                tech: ["C#", "Piper TTS", "Speech AI"],
-                links: [
-                    { label: "Download", url: "https://github.com/AestheticDreamsAI/PiperLing", working: true },
-                    { label: "Docs", url: "https://github.com/AestheticDreamsAI/PiperLing#readme", working: true }
-                ]
-            },
-            {
-                title: "Alessia Seelentanz",
-                subtitle: "AI Influencer with Real Personality",
-                status: "Live",
-                statusClass: "live",
-                outcome: "Consistent persona, real engagement, zero management.",
-                description: "German lifestyle AI that writes her own content, maintains consistent personality, and builds genuine connections. Experimental emotional intelligence with long-term memory.",
-                tech: ["Python", "Personality AI", "Social"],
-                links: [
-                    { label: "Meet Alessia", url: "https://www.instagram.com/alessiaseelentanz/", working: true },
-                    { label: "Technical", url: "https://alessia-seelentanz.de/", working: true }
-                ]
-            },
-            {
-                title: "Your Project",
-                subtitle: "Whatever Needs Building",
-                status: "Available",
-                statusClass: "development",
-                outcome: "Whatever you need built – the right way.",
-                description: "Got a problem that needs solving? A project stuck in committee hell? Something that needs to actually work? Let's build it together.",
-                tech: ["Your Choice", "Best Practices", "Results"],
-                links: [
-                    { label: "Start", url: "mailto:Contact@aestheticdreams.net", working: true },
-                    { label: "Process", url: "#", working: true }
-                ]
-            }
-        ];
+class MinimalApp {
+    constructor() {
+        this.currentPage = 'home';
+        this.pages = {
+            home: `
+                <section class="hero">
+                    <p class="muted mb-1">Function Over Form • Independent • Solo Builder</p>
+                    <h1>Build Stuff That Works</h1>
+                    <p class="large mb-2">
+                        I'm Phil, 37, direct approach. I create solutions that 
+                        <strong>actually work</strong> – my way, my rules. No committees. 
+                        No excuses. If you want results over politics, you're in the right place.
+                    </p>
+                    
+                    <div class="mb-2">
+                        <button class="btn" data-page="projects">See Projects</button>
+                        <button class="btn btn-secondary" data-page="stories">Read Stories</button>
+                        <button class="btn btn-secondary" data-page="contact">Work With Me</button>
+                    </div>
 
-        class MinimalApp {
-            constructor() {
-                this.currentPage = 'home';
-                this.init();
-            }
-
-            init() {
-                this.setupNavigation();
-                this.renderProjects();
-                this.setupMobileMenu();
-                document.body.classList.remove('loading');
-            }
-
-            setupNavigation() {
-                // Handle all navigation clicks
-                document.addEventListener('click', (e) => {
-                    const pageTarget = e.target.getAttribute('data-page');
-                    if (pageTarget) {
-                        e.preventDefault();
-                        this.navigateToPage(pageTarget);
-                    }
-                });
-            }
-
-            navigateToPage(pageId) {
-                if (this.currentPage === pageId) return;
-
-                // Remove active from current page
-                const currentPage = document.getElementById(this.currentPage);
-                if (currentPage) {
-                    currentPage.classList.remove('active');
-                }
-
-                // Remove active from all nav links
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                // Add active to target page after small delay for smooth transition
-                setTimeout(() => {
-                    const targetPage = document.getElementById(pageId);
-                    if (targetPage) {
-                        targetPage.classList.add('active');
-                    }
-                }, 50);
-                
-                // Add active to nav link
-                const targetNav = document.querySelector(`[data-page="${pageId}"].nav-link`);
-                if (targetNav) {
-                    targetNav.classList.add('active');
-                }
-
-                // Close mobile menu
-                document.getElementById('navLinks').classList.remove('active');
-                
-                this.currentPage = pageId;
-            }
-
-            renderProjects() {
-                const grid = document.getElementById('projectsGrid');
-                if (!grid) return;
-
-                grid.innerHTML = projects.map(project => `
+                    <div class="card mt-2">
+                        <h3>Recent Work</h3>
+                        <p class="muted mb-0">
+                            GoogolPlex 2025 (patch-proof iOS framework) • 
+                            LAMBot-AI (intent-driven automation) • 
+                            Cherry-Lite (offline AI) • 
+                            PiperLing (speech translation) • 
+                            Alessia (automated persona)
+                        </p>
+                    </div>
+                </section>
+            `,
+            projects: `
+                <section id="projects">
+                    <h2>Real Solutions</h2>
+                    <p class="large muted mb-2">Stuff that works – no committee processes, just results.</p>
+                    
                     <div class="card">
-                        <div class="project-header">
-                            <h3>${project.title}</h3>
-                            <div class="project-status ${project.statusClass}">${project.status}</div>
-                        </div>
-                        <p class="muted mb-1">${project.subtitle}</p>
-                        <div class="project-outcome">${project.outcome}</div>
-                        <p>${project.description}</p>
-                        <div class="tech-tags">
-                            ${project.tech.map(tech => `<div class="tech-tag">${tech}</div>`).join('')}
-                        </div>
-                        <div class="project-links">
-                            ${project.links.map(link => `
-                                <a href="${link.url}" 
-                                   target="${link.working ? '_blank' : ''}" 
-                                   rel="${link.working ? 'noopener' : ''}"
-                                   class="link-btn ${!link.working ? 'disabled' : ''}"
-                                   ${link.label === 'Process' ? 'data-page="process"' : ''}>
-                                    ${link.label}
-                                </a>
-                            `).join('')}
+                        <h3>How I Work</h3>
+                        <ul>
+                            <li>Solo delivery. I handle architecture, build, and handover.</li>
+                            <li>Independent builds. My infrastructure = your stability.</li>
+                            <li>Direct comms. Async, clear, no status-meeting circus.</li>
+                            <li>Action over analysis. Blocks dissolve through doing, not thinking.</li>
+                            <li>Project-based. No hourly billing games.</li>
+                            <li>Full ownership. Code and docs are yours.</li>
+                        </ul>
+                        <div class="project-outcome mt-4">
+                            <strong>Not compatible if:</strong> You want committee decisions, "enterprise beautiful," constant validation, or everything for cheap.
                         </div>
                     </div>
-                `).join('');
 
-                // Handle disabled links
-                document.querySelectorAll('.link-btn.disabled').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        return false;
-                    });
-                });
+                    <div id="projectsGrid" class="grid">
+                        <!-- Projects inserted by JavaScript -->
+                    </div>
+                </section>
+            `,
+            process: `
+                <section id="process">
+                    <h2>How I Work</h2>
+                    <p class="large muted mb-2">Solo delivery. Clear communication. Real ownership.</p>
+
+                    <div class="grid">
+                        <div class="card">
+                            <h3>Solo Delivery</h3>
+                            <p>I handle everything: architecture, build, and handover. No coordination overhead, no communication bottlenecks. Just one person who takes full responsibility.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Independent Infrastructure</h3>
+                            <p>My tools, my servers, my processes. That means your project isn't dependent on external teams, corporate policies, or committee decisions.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Direct Communication</h3>
+                            <p>Async, clear, no status-meeting circus. I send updates when there's something meaningful to report. You get honest progress, not political theater.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Action Over Analysis</h3>
+                            <p>Blocks dissolve through doing, not endless planning. I build, test, iterate, and deliver. Analysis paralysis isn't in my vocabulary.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Project-Based Pricing</h3>
+                            <p>No hourly billing games. We agree on scope, timeline, and price upfront. You get predictable costs and guaranteed delivery.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Full Ownership</h3>
+                            <p>All code, documentation, and assets are yours. No vendor lock-in, no ongoing dependencies. Complete control over your solution.</p>
+                        </div>
+                    </div>
+
+                    <div class="card alert-error">
+                        <h3>Not Compatible If:</h3>
+                        <p class="mb-0">You want committee decisions, "enterprise beautiful," constant validation, or everything for cheap. I don't lower my standards or change my approach for anyone.</p>
+                    </div>
+                </section>
+            `,
+            stories: `
+                <section id="stories">
+                    <h2>Stories</h2>
+                    <p class="large muted mb-2">Why I build the way I build.</p>
+
+                    <div class="grid">
+                        <div class="card">
+                            <h3>Nobody Believed in Me</h3>
+                            <p>Teachers said I'd never make it because of my disability. So I taught myself everything - programming, web design, automation. Today I'm independent, building what nobody thought I could.</p>
+                            <p class="muted"><strong>"I'm more than any label they tried to stick on me."</strong></p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Escaped the Corporate Cage</h3>
+                            <p>10 years in an institution doing meaningless work. Part-time, boring tasks, no impact. I quit without looking back. Now I'm my own boss, building stuff that matters.</p>
+                            <p class="muted"><strong>"When you realize you're in a cage, break out."</strong></p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Blockades Are Bullshit</h3>
+                            <p>Writer's block, analysis paralysis, waiting for perfect conditions. All excuses. Blocks dissolve through action, not thinking. First step beats any excuse.</p>
+                            <p class="muted"><strong>"You don't need to be ready - you need to start."</strong></p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Focus or Fail</h3>
+                            <p>Was filling two glasses simultaneously - goals and distractions. Result: nothing progressed. Deleted TikTok, focused on what matters. Multitasking is a lie.</p>
+                            <p class="muted"><strong>"Focus makes the difference - direction, not just movement."</strong></p>
+                        </div>
+
+                        <div class="card">
+                            <h3>30 Second Decisions</h3>
+                            <p>Stopped overthinking everything. When something feels right, I act within 30-60 seconds. No debates with myself. Your gut doesn't lie.</p>
+                            <p class="muted"><strong>"Your feeling doesn't lie - your head often does."</strong></p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Independence Isn't Optional</h3>
+                            <p>My limitations taught me to find my own solutions. The world sees obstacles - I see engineering problems. That's why I build independent systems.</p>
+                            <p class="muted"><strong>"The world sees limits - I see solutions."</strong></p>
+                        </div>
+                    </div>
+                </section>
+            `,
+            videos: `
+                <section id="videos">
+                    <h2>Videos</h2>
+                    <p class="large muted mb-2">2013 AI experiments - building voice interfaces before it was mainstream.</p>
+
+                    <div class="grid">
+                        <div class="card">
+                            <h3>Jarvis Alarm Test</h3>
+                            <p class="muted mb-1">2013 • Voice Interface</p>
+                            <p>Early Jarvis system handling alarm functions.</p>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=l6504aNXCZI" target="_blank" rel="noopener" class="link-btn">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3>Jarvis K.A.R.R Animation</h3>
+                            <p class="muted mb-1">2013 • UI Demo</p>
+                            <p>Visual interface experiments for voice control system.</p>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=7GQQ3oKuEco" target="_blank" rel="noopener" class="link-btn">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3>Nao Robot + Siri</h3>
+                            <p class="muted mb-1">2013 • Hardware Integration</p>
+                            <p>Nao robot responding to Siri commands.</p>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/watch?v=14VftnBeuY8" target="_blank" rel="noopener" class="link-btn">Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `,
+            about: `
+                <section id="about">
+                    <h2>About Me</h2>
+                    <div class="grid">
+                        <div class="card">
+                            <p>I code my way, not the textbook way. Started with my dad's Atari ST, taught myself web design when teachers said "your disability defines you, you'll never make it."</p>
+                            <p>Disabled since birth, kidney transplant at 10, years of surgeries, a stroke. No pity story – just facts. When doctors said I wouldn't make it, when teachers said I'd never be independent, when the institution I worked for blocked me from uploading websites because of "privacy concerns" — I found my own solutions.</p>
+                            <div class="project-outcome">"When I broke through the company firewall just to do my job, they stopped seeing the wheelchair – they saw someone who solves problems."</div>
+                            <p>That's when I learned my core philosophy: <strong>Function beats bureaucracy</strong>. The institution preached "privacy and security" while their firewall was so locked down I couldn't even do basic web development. So I hacked through it. Not for fun, but to get my work done.</p>
+                            <p>Through intensive training, I overcame chronic issues that 20 years of physiotherapy couldn't fix. Fitness became my laboratory for discipline and breakthrough thinking. I built a global community of thousands who stopped making excuses and started taking action.</p>
+                            <p>Independence isn't ideology – it's survival. When "official channels" don't work, you make your own. Less dependencies = less points of failure.</p>
+                            <p><strong>Tech Stack:</strong> C#, Python, JavaScript • ML.NET, Ollama, local LLMs • Piper TTS • iOS Shortcuts • Home Assistant</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Timeline (1988–2025)</h3>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px;"><strong>1988</strong> Born. Dad's Atari ST sparked my tech curiosity.</li>
+                                <li style="margin-bottom: 10px;"><strong>1998 (10)</strong> Kidney transplant. Dad donated. First lesson: never give up.</li>
+                                <li style="margin-bottom: 10px;"><strong>2003–2006</strong> Started coding out of necessity. Hip surgery → pain → focus.</li>
+                                <li style="margin-bottom: 10px;"><strong>2007–2017</strong> 10 years as web designer in disability institution. Built my own AI (Jarvis) around 2012. Taught myself HTML, CSS, JS, C#. Hacked firewall just to do my job.</li>
+                                <li style="margin-bottom: 10px;"><strong>2017</strong> Escaped the cage. Quit, went independent. No more bureaucracy.</li>
+                                <li style="margin-bottom: 10px;"><strong>2018–2022</strong> Voice interfaces, ML frameworks, broke limitations that 20 years of physio couldn't fix.</li>
+                                <li style="margin-bottom: 10px;"><strong>2023–2024</strong> 109 days detox, refined independence, built stronger foundations.</li>
+                                <li style="margin-bottom: 10px;"><strong>2025</strong> GoogolPlex 2025 released. Alessia launched. Building publicly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            `,
+            independence: `
+                <section id="independence">
+                    <h2>Why Independence?</h2>
+                    <p>Independence isn't ideology – it's practical. Less dependencies = less failures. My infrastructure = your control. When shit breaks, you want solutions that depend on you, not Silicon Valley's mood.</p>
+                    <p>I've watched companies crumble because AWS had a bad day or Google changed their API pricing. My stuff runs on my terms. Privacy? Sure, that's nice too. But the real win is <strong>reliability</strong> and <strong>cost control</strong>. No surprise bills, no policy changes disrupting your business overnight.</p>
+                    <p>I code like my freedom depends on it – because it does. And if you value your independence too, we'll work well together.</p>
+                </section>
+            `,
+            contact: `
+                <section id="contact">
+                    <h2>Let's Build Something</h2>
+                    <p class="large muted mb-2">Ready for solutions that actually work?</p>
+
+                    <div class="grid">
+                        <div class="card">
+                            <h3>Send Me This:</h3>
+                            <ul>
+                                <li>Problem & goal (2-3 sentences)</li>
+                                <li>Context & constraints</li>
+                                <li>Budget range & timeline</li>
+                                <li>Are you the decision maker? (Yes/No)</li>
+                            </ul>
+                            <p class="muted"><strong>Note:</strong> I reply only if we're a fit. I don't lower my standards or change my approach for anyone.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Perfect For:</h3>
+                            <ul>
+                                <li>Decision makers who want results</li>
+                                <li>Teams tired of committee paralysis</li>
+                                <li>Projects needing independent solutions</li>
+                                <li>Businesses ready to move fast</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-grid">
+                        <a href="mailto:Contact@aestheticdreams.net" class="contact-link">
+                            <h4>Request Scope</h4>
+                            <p>Get a clear proposal</p>
+                        </a>
+                        <a href="https://github.com/AestheticDreamsAI" target="_blank" rel="noopener" class="contact-link">
+                            <h4>See Proof</h4>
+                            <p>Check my GitHub</p>
+                        </a>
+                        <a href="https://gplex.dev" target="_blank" rel="noopener" class="contact-link">
+                            <h4>Open Specs</h4>
+                            <p>Technical details</p>
+                        </a>
+                        <a href="https://www.instagram.com/alessiaseelentanz/" target="_blank" rel="noopener" class="contact-link">
+                            <h4>Live AI Demo</h4>
+                            <p>See Alessia in action</p>
+                        </a>
+                    </div>
+                </section>
+            `
+        };
+        this.init();
+    }
+
+    init() {
+        this.setupNavigation();
+        this.renderProjects();
+        this.setupMobileMenu();
+        document.body.classList.remove('loading');
+    }
+
+    setupNavigation() {
+        // Handle all navigation clicks
+        document.addEventListener('click', (e) => {
+            const pageTarget = e.target.getAttribute('data-page');
+            if (pageTarget) {
+                e.preventDefault();
+                this.navigateToPage(pageTarget);
             }
+        });
+    }
 
-            setupMobileMenu() {
-                const toggle = document.getElementById('mobileToggle');
-                const navLinks = document.getElementById('navLinks');
+    navigateToPage(pageId) {
+        if (this.currentPage === pageId) return;
 
-                toggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
+        // Remove active from current page
+        const currentPage = document.getElementById(this.currentPage);
+        if (currentPage) {
+            currentPage.classList.remove('active');
+        }
 
-                // Close menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
-                        navLinks.classList.remove('active');
-                    }
-                });
+        // Remove active from all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Load new page content
+        const main = document.querySelector('.main');
+        if (main && this.pages[pageId]) {
+            main.innerHTML = `<div id="${pageId}" class="page active"><div class="container">${this.pages[pageId]}</div></div>`;
+            
+            // Re-render projects if on projects page
+            if (pageId === 'projects') {
+                setTimeout(() => this.renderProjects(), 10);
             }
         }
 
-        // Initialize app when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            new MinimalApp();
+        // Add active to nav link
+        const targetNav = document.querySelector(`[data-page="${pageId}"].nav-link`);
+        if (targetNav) {
+            targetNav.classList.add('active');
+        }
+
+        // Close mobile menu
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) {
+            navLinks.classList.remove('active');
+        }
+
+        this.currentPage = pageId;
+    }
+
+    renderProjects() {
+        const grid = document.getElementById('projectsGrid');
+        if (!grid) return;
+
+        grid.innerHTML = projects.map(project => `
+            <article class="card">
+                <div class="project-header">
+                    <h3>${project.title}</h3>
+                    <div class="project-status ${project.statusClass}">${project.status}</div>
+                </div>
+                <p class="muted mb-1">${project.subtitle}</p>
+                <div class="project-outcome">${project.outcome}</div>
+                <p>${project.description}</p>
+                <div class="tech-tags">
+                    ${project.tech.map(tech => `<div class="tech-tag">${tech}</div>`).join('')}
+                </div>
+                <div class="project-links">
+                    ${project.links.map(link => `
+                        <a href="${link.url}" 
+                           target="${link.working ? '_blank' : ''}" 
+                           rel="${link.working ? 'noopener' : ''}"
+                           class="link-btn ${!link.working ? 'disabled' : ''}"
+                           ${link.label === 'Process' ? 'data-page="process"' : ''}>
+                            ${link.label}
+                        </a>
+                    `).join('')}
+                </div>
+            </article>
+        `).join('');
+
+        // Handle disabled links
+        document.querySelectorAll('.link-btn.disabled').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                return false;
+            });
         });
-    </script>
+    }
+
+    setupMobileMenu() {
+        const toggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    }
+}
+
+// Initialize app when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new MinimalApp();
+});
+
+// Handle disabled link clicks
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('disabled') || e.target.getAttribute('aria-disabled') === 'true') {
+        e.preventDefault();
+        return false;
+    }
+});
+</script>
 </body>
 </html>
